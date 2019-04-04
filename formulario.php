@@ -10,15 +10,16 @@
 
 </head>
 <body>
-<div class="container">
-<section class="section">
-<article class="article">
-<form class="caja" action="https://www.biztree.com/es/doc/gracias-por-confiar-en-nosotros-empresa-de-servicios-D3882" method="post">
-	<div>
-		<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre de usuario" required>
+<div class="jumbotron">
+  <h1 class="display-4">E-LIBRARY</h1>
+  <p class="lead">Tus utiles con un solo click.</p>
+  <hr class="my-4">
+  <form class="caja" action="https://www.biztree.com/es/doc/gracias-por-confiar-en-nosotros-empresa-de-servicios-D3882" method="post">
+	<div class="nombre" >
+		<input type="text" class="form-control" placeholder="Nombre de usuario" required>
 	</div>
-	<div>
-		<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+	<div class="password">
+		<input type="password" class="form-control" placeholder="Password">
 	</div>
     <div>
   	<div class="form-group">
@@ -28,13 +29,13 @@
   	</div>
 
     <div>
-    	<label>Seleccione sus preferencias de eventos</label>
+    	<label>Genero</label>
     	<br>
-		<input type="checkbox" name="servicio" value="1">Recitales
+		<input type="checkbox" name="mujer" value="1">Mujer
 		<br>
-		<input type="checkbox" name="servicio" value="1">Boliches
+		<input type="checkbox" name="hombre" value="1">Hombre
 		<br>
-		<input type="checkbox" name="servicio" value="1">Fiestas tematicas
+		<input type="checkbox" name="nobin" value="1">No binarie
 	</div>
 	<div>
     <label>
@@ -47,15 +48,20 @@
 	</label>
     </div>
     <div>
-    <button type="reset" name="button">Reiniciar</button>
-       <button type="submit" name="button">Enviar</button>
-    </div>
-
-
-</form>
-</article>
-</section>
+ <div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary" name="mujer">Mujer</button>
+  <button type="button" class="btn btn-secondary" name="hombre">Hombre</button>
+  <button type="button" class="btn btn-secondary" name="nobinarie">No binarie</button>
 </div>
+    <button  class="btn btn-primary btn-lg"type="reset" name="button">Reiniciar</button>
+       <button class="btn btn-primary btn-lg" type="submit" name="button">Enviar</button>
+    </div>
+ </form>
+ 
+
+</div>
+
+
 
 
 <article>

@@ -2,12 +2,13 @@
 body{
 	background-color: orange;
 	align-content: center;
+	color: grey;
 }
-.article{
-	border: solid 1px black; 
-	align-content: center;
-	width: 240px;
-	height: 541px;
-	padding: 10px;
-	
+.jumbotron{
+	margin: auto;
+	border: solid 1px grey; 
+	width: 370px;	
+}
+.password{
+	margin-top: 5px;
 }
