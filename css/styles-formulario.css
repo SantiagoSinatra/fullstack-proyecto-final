@@ -1,3 +1,13 @@
+
 body{
-	background-color: green;
+	background-color: orange;
+	align-content: center;
+}
+.article{
+	border: solid 1px black; 
+	align-content: center;
+	width: 240px;
+	height: 541px;
+	padding: 10px;
+	
 }
