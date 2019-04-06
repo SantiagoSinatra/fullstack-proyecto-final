@@ -22,7 +22,7 @@
                 <div class="s-contenedor-nav-links s-opacity">
                 <ul class="s-nav-links">
                     <li><a href="">inicio</a></li>
-                    <li><a href="">login/registrarse</a></li>
+                    <li><a href="formulario.php">login/registrarse</a></li>
                     <li><a href="">categorias</a></li>
                     <li><a href="">faq</a></li>
                     <li><a href="">contacto</a></li>
