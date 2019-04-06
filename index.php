@@ -34,10 +34,26 @@
                     <div class="s-line3"></div>
                 </div>
             </nav>
+            <section class="s-articulos row ">
+                <article class="s-articulo-main s-articulo1 col-12">
+                </article>
+                <article class="s-articulo-main s-articulo2 col-12">
+                </article>
+                <article class="s-articulo-main s-articulo3 col-12">
+                </article>
+                <article class="s-articulo-main s-articulo1 col-12">
+                </article>
+                <article class="s-articulo-main s-articulo2 col-12">
+                </article>
+                <article class="s-articulo-main s-articulo3 col-12">
+                </article>
+            </section>
+            
+            <footer class="col-12 s-footer">
+                <h3 class="s-footer-text">contacto | tel: 1234-5678 | email: unemail@email.com</h3>
+
+            </footer> 
         </div>
-
-
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

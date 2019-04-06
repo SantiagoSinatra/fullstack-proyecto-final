@@ -7,7 +7,9 @@
 .s-contenedor-gral{
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
 }
 
 nav{
@@ -37,11 +39,13 @@ nav{
 }
 
 .s-contenedor-nav-links{
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.85);
     position: absolute;
     width: 100vw;
     height: 92vh;
     top: 8vh;
+    overflow: hidden;
+    z-index: 999;
     
     
 }
@@ -92,4 +96,50 @@ nav{
 .s-opacity-active{
     opacity: 100;
     transition: opacity 0.5s ease-in;
+}
+
+.s-articulos{
+    display: flex;
+    padding-top: 2vh;
+    margin-left: 4vw;
+    margin-right: 2vw;
+    padding-left: 4vw;
+    padding-right: 6vw;
+    background-color: slategray;
+}
+
+.s-articulo-main{
+    min-height: 35vh;
+    width: 80vw;
+    margin-bottom: 2vh;
+    text-align: center;
+    border: #ffc400;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 30px;
+}
+
+.s-articulo1{
+    background-image: url(../img/test-article1.jpg);
+    background-size: contain;
+}
+
+.s-articulo2{
+    background-image: url(../img/test-article2.jpg);
+    background-color: orangered;
+}
+
+.s-articulo3{
+    background-image: url(../img/test-article3.jpg);
+    background-color: darkgreen;
+}
+.s-footer{
+    background-color: #ffc400;
+}
+
+.s-footer-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
 }
