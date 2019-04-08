@@ -18,7 +18,7 @@
   <p class="lead">Tus utiles con un solo click.</p>
   <hr class="my-4">
 </section>
-  <form class="caja" action="https://www.biztree.com/es/doc/gracias-por-confiar-en-nosotros-empresa-de-servicios-D3882" method="post">
+  <form class="caja" action="index.php" method="post">
 	<div class="password">
 		<input type="email" class="form-control" placeholder="Email">
 	</div>
