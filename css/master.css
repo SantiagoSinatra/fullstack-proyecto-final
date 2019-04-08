@@ -38,6 +38,15 @@ nav{
     -webkit-text-stroke-color: #e1007a;
 }
 
+.s-slogan{
+    position: absolute;
+    color: white;
+    top: 5vh;
+    left: 9vw;
+    font-size: 1em;
+
+}
+
 .s-contenedor-nav-links{
     background-color: rgba(0, 0, 0, 0.85);
     position: absolute;
@@ -105,6 +114,8 @@ nav{
     margin-right: 2vw;
     padding-left: 4vw;
     padding-right: 6vw;
+    background-image: url("https://images.pexels.com/photos/207666/pexels-photo-207666.jpeg?cs=srgb&dl=art-art-materials-brush-207666.jpg&fm=jpg") ;
+    background-size: cover;
     background-color: slategray;
 }
 

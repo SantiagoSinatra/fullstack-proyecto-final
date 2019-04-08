@@ -19,6 +19,7 @@
         <div class="row">
             <nav class="col-12">
                 <h1 class="s-titulo">elibrary<span class="s-span-titulo">.com<span></h1>
+                <h3 class="s-slogan">tus utiles con un solo click</h3>
                 <div class="s-contenedor-nav-links s-opacity">
                 <ul class="s-nav-links">
                     <li><a href="">inicio</a></li>
