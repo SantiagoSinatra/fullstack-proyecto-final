@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.s-contenedor-gral{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+}
+
+nav{
+    display: flex;
+    background-color: #ffc400;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 8vh;
+}
+
+.s-titulo{
+    margin: 5vw;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+.s-span-titulo{
+    color: #ffc400;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #e1007a;
+}
+
+.s-contenedor-nav-links{
+    background-color: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    width: 100vw;
+    height: 92vh;
+    top: 8vh;
+    overflow: hidden;
+    z-index: 999;
+    
+    
+}
+.s-opacity{
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.s-nav-links{
+    display: flex;
+    flex-direction: column; 
+    margin-top: 20px;
+    
+}
+
+.s-nav-links li{
+    justify-content: space-around;
+    list-style: none;
+    text-align: center;
+    margin: 20px;
+}
+
+.s-nav-links li:hover{
+    text-decoration: underline;
+}
+
+.s-nav-links a{
+    color: #e1007a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.s-nav-button{
+    cursor: pointer;
+}
+
+.s-nav-button div{
+    width: 25px;
+    height: 4px;
+    background-color: black;
+    border-radius: 10px;
+    margin: 5px;
+    margin-right: 5vw;
+}
+
+.s-opacity-active{
+    opacity: 100;
+    transition: opacity 0.5s ease-in;
+}
+
+.s-articulos{
+    display: flex;
+    padding-top: 2vh;
+    margin-left: 4vw;
+    margin-right: 2vw;
+    padding-left: 4vw;
+    padding-right: 6vw;
+    background-color: slategray;
+}
+
+.s-articulo-main{
+    min-height: 35vh;
+    width: 80vw;
+    margin-bottom: 2vh;
+    text-align: center;
+    border: #ffc400;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 30px;
+}
+
+.s-articulo1{
+    background-image: url(../img/test-article1.jpg);
+    background-size: contain;
+}
+
+.s-articulo2{
+    background-image: url(../img/test-article2.jpg);
+    background-color: orangered;
+}
+
+.s-articulo3{
+    background-image: url(../img/test-article3.jpg);
+    background-color: darkgreen;
+}
+.s-footer{
+    background-color: #ffc400;
+}
+
+.s-footer-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
