@@ -25,7 +25,7 @@
                     <li><a href="">inicio</a></li>
                     <li><a href="formulario.php">login/registrarse</a></li>
                     <li><a href="">categorias</a></li>
-                    <li><a href="">faq</a></li>
+                    <li><a href="faq.php">faq</a></li>
                     <li><a href="">contacto</a></li>
                 </ul>
                 </div>
