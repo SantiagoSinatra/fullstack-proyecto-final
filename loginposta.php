@@ -25,6 +25,7 @@
 	<div class="password">
 		<input type="password" class="form-control" placeholder="Contraseña">
 	</div>
+	  
 	<button class="btn btn-primary btn" type="submit" name="button">Iniciar sesión</button>
     <button  class="btn btn-primary btn" type="reset" name="button">Reiniciar</button>
        

@@ -1,3 +1,16 @@
+<?php
+include_once("control/funciones.php");
+if ($_POST){
+  $errores=validar($_POST);
+  if (count($errores)==0){
+    $avatar = crearAvatar($_FILES);
+    $registro = crearRegistro($_POST,$avatar);
+    guardar($registro);
+    header("location: loginposta.php");
+  }
+
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -24,25 +37,41 @@
 					<p class="lead">Tus utiles con un solo click.</p>
 					<hr class="my-4">
 				</section>
-				<form class="caja" action="loginposta.php" method="post">
-					<div class="nombre">
-						<input type="text" class="form-control" placeholder="Nombre de usuario" required>
+				<form class="caja" action="" method="POST" enctype="multipart/form-data" >
+					<div >
+						<span class="span1">Holaaaaa</span>
+						<input type="text" name="nombre" class="form-control" placeholder="Nombre de usuario" value="<?= (isset($errores["nombre"]))? "" : persistir("nombre"); ?>" >
+						<?php if(isset($errores["nombre"])):
+      						echo "<span class='span'>*". 
+      						$errores["nombre"]. "</span>"; endif;?>
 					</div>
-					<div class="password">
-						<input type="email" class="form-control" placeholder="Email">
+					<div >
+						<input type="email" name="email" class="form-control" value="<?=(isset($errores["email"]))? "" : persistir("email");?>" placeholder="Email">
+						<?php if(isset($errores["email"])):
+      						echo "<span class='span'>*". 
+      						$errores["email"]. "</span>"; endif;?>
 					</div>
-					<div class="password">
-						<input type="password" class="form-control" placeholder="Contraseña">
+					<div>
+						<input type="password" name="password" class="form-control" placeholder="Contraseña">
+						<?php if(isset($errores["password"])):
+      						echo "<span class='span'>*". 
+      						$errores["password"]. "</span>"; endif;?>
 					</div>
-					<div class="password">
-						<input type="password" class="form-control" placeholder="Repetir contraseña">
+					<div>
+						<input type="password" name="repassword" class="form-control" placeholder="Repetir contraseña">
 					</div>
 					<section class="section2">
-						<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+						<div class="btn-group btn-group-sm" role="group" aria-label="Basic example" name="boton">
 							<button type="button" id="mujer" class="btn btn-secondary" name="mujer">Mujer</button>
 							<button type="button" id="hombre" class="btn btn-secondary" name="hombre">Hombre</button>
 							<button type="button" class="btn btn-secondary" name="nobinarie">No binario</button>
 						</div>
+						<br>
+						<input name="avatar" type="file" id="avatar" value="" placeholder="Seleccione foto de perfil" />
+						<?php if(isset($errores["avatar"])):
+      						echo "<span class='span'><br>*". 
+      						$errores["avatar"]. "</span>"; endif;?>
+            			<br>   
 					</section>
 					<button class="btn btn-primary btn" type="submit" name="button">Registrarse</button>
 					<button class="btn btn-primary btn" type="reset" name="button">Reiniciar</button>

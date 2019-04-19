@@ -5,11 +5,10 @@
   font-family: Calibri;
 }
 body{
-  background-image: url("https://images.pexels.com/photos/207666/pexels-photo-207666.jpeg?cs=srgb&dl=art-art-materials-brush-207666.jpg&fm=jpg") ;
+  background-image: url("arcoirist.jpeg") ;
   background-repeat: no-repeat; 
   background-size: cover;
 }
-
 .jumbotron{
   padding-top: 15px;
   padding-bottom: 15px;
@@ -23,7 +22,14 @@ body{
 .article1{
   margin-top: 20px;
 }
-
+.span1{
+  font-size: 10px;
+  color: red;
+}
+span{
+  font-size: 10px;
+  color: red;
+}
 .form-control{
   font-size-adjust: 10px;
   margin-bottom: 2px;
