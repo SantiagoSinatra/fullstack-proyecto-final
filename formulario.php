@@ -61,13 +61,9 @@ if ($_POST){
 						<input type="password" name="repassword" class="form-control" placeholder="Repetir contraseña">
 					</div>
 					<section class="section2">
-						<div class="btn-group btn-group-sm" role="group" aria-label="Basic example" name="boton">
-							<button type="button" id="mujer" class="btn btn-secondary" name="mujer">Mujer</button>
-							<button type="button" id="hombre" class="btn btn-secondary" name="hombre">Hombre</button>
-							<button type="button" class="btn btn-secondary" name="nobinarie">No binario</button>
-						</div>
-						<br>
-						<input name="avatar" type="file" id="avatar" value="" placeholder="Seleccione foto de perfil" />
+						<label class="btn btn-primary botonFoto">Seleccione foto de perfil
+						<input name="avatar" style="display: none;" type="file" id="avatar" value="" placeholder="Seleccione foto de perfil" />
+						</label>
 						<?php if(isset($errores["avatar"])):
       						echo "<span class='span'><br>*". 
       						$errores["avatar"]. "</span>"; endif;?>

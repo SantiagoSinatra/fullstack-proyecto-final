@@ -41,6 +41,9 @@ span{
   background-color: #e20079;
   border: none;
 }
+.botonFoto{
+  background-color: black;
+}
 
 .loginBtn {
   box-sizing: border-box;
