@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container-fluid {
+    background-color: goldenrod;
+    overflow-x: hidden;
+}
+
+.ss-background-ofertas {
+    background-color: crimson;
+    border-radius: 5px;
+    padding: 5px 0 2px 0;
+}
+
+.ss-section-ofertas{
+    padding: 0;
+}
+
+.ss-titulo-section-ofertas {
+    font-size: 1em;
+    text-align: center;
+}
+
+.ss-titulo-article-ofertas{
+    font-size: 1em;
+    text-align: center;
+}
+
+.ss-imagenes-ofertas{
+    width: 90%;
+}
+
+.ss-titulo-categorias{
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.ss-articulos-categorias{
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.ss-categoria-global-properties{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+
+.ss-categoria-escolares{
+    background-color: burlywood;
+}
+.ss-categoria-dibujo{
+    background-color: cadetblue;
+}
+.ss-categoria-oficina{
+    background-color: coral;
+}
+.ss-categoria-mayorista{
+    background-color: darkseagreen;
+}
+.ss-categoria-inclusivos{
+    background-color: lightcoral;
+}
