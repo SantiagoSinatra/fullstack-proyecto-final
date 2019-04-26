@@ -17,9 +17,12 @@
 
 <body>
     <!-- contenedor gral -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 ss-background-main">
+        <div class="container-nav-global">
+            <?php include("nav-global.php");?>
+       </div>
         <!-- carousel -->
-        <div class="pt-3 mb-3">
+        <div class="mb-3">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -49,19 +52,19 @@
                 <div class="ss-background-ofertas">
                     <h2 class="ss-titulo-section-ofertas">¡Oferta por tiempo limitado!</h2>
                     <div class="row mt-3">
-                        <article class="col-6">
+                        <article class="col-6 col-md-3">
                             <img src="img/ofertas-lapiz-pizzini-1.jpg" class="ss-imagenes-ofertas rounded mx-auto d-block" alt="">
                             <h3 class="ss-titulo-article-ofertas">Lapiz Pizzini 0.5mm<br>$79.99</h3>
                         </article>
-                        <article class="col-6">
+                        <article class="col-6 col-md-3">
                             <img src="img/ofertas-minas-pizzini-2.jpg" class="ss-imagenes-ofertas rounded mx-auto d-block" alt="">
                             <h3 class="ss-titulo-article-ofertas">Minas Pizzini 0.5mm<br>$49.99</h3>
                         </article>
-                        <article class="col-6">
+                        <article class="col-6 col-md-3">
                             <img src="img/ofertas-tablero-plantec-3.jpg" class="ss-imagenes-ofertas rounded mx-auto d-block" alt="">
                             <h3 class="ss-titulo-article-ofertas">Tablero Plantec<br>$1299.99</h3>
                         </article>
-                        <article class="col-6">
+                        <article class="col-6 col-md-3">
                             <img src="img/ofertas-regla-plantec-4.jpg" class="ss-imagenes-ofertas rounded mx-auto d-block" alt="">
                             <h3 class="ss-titulo-article-ofertas">Regla Plantec Aluminio<br>$299.99</h3>
                         </article>
@@ -70,25 +73,26 @@
                 </div>
             </section>
             <section class="col-12 ss-section-categorias mt-4">
-                <h2 class="ss-titulo-categorias">Nuestros Productos</h2>
-                <div class="row">
-                    <article class="col-12 ss-categoria-escolares ss-categoria-global-properties">
-                        <h3 class="ss-articulos-categorias ">Escolares</h3>
-                    </article>
-                    <article class="col-12 ss-categoria-dibujo ss-categoria-global-properties">
-                        <h3 class="ss-articulos-categorias ">Dibujo Tecnico</h3>
-                    </article>
-                    <article class="col-12 ss-categoria-oficina ss-categoria-global-properties">
-                        <h3 class="ss-articulos-categorias ">Articulos de Oficina</h3>
-                    </article>
-                    <article class="col-12 ss-categoria-mayorista ss-categoria-global-properties">
-                        <h3 class="ss-articulos-categorias ">Ventas por Mayor</h3>
-                    </article>
-                    <article class="col-12 ss-categoria-inclusivos ss-categoria-global-properties">
-                        <h3 class="ss-articulos-categorias ">Productos Inclusivos</h3>
-                    </article>
+                <div class="ss-background-productos">
+                    <h2 class="ss-titulo-categorias">Nuestros Productos</h2>
+                    <div class="row">
+                        <article class="col-12 col-md-6 ss-categoria-escolares ss-categoria-global-properties">
+                            <h3 class="ss-articulos-categorias ">Escolares</h3>
+                        </article>
+                        <article class="col-12 col-md-6 ss-categoria-dibujo ss-categoria-global-properties">
+                            <h3 class="ss-articulos-categorias ">Dibujo Tecnico</h3>
+                        </article>
+                        <article class="col-12 col-md-4 ss-categoria-oficina ss-categoria-global-properties">
+                            <h3 class="ss-articulos-categorias ">Articulos de Oficina</h3>
+                        </article>
+                        <article class="col-12 col-md-4 ss-categoria-mayorista ss-categoria-global-properties">
+                            <h3 class="ss-articulos-categorias ">Ventas por Mayor</h3>
+                        </article>
+                        <article class="col-12 col-md-4 ss-categoria-inclusivos ss-categoria-global-properties">
+                            <h3 class="ss-articulos-categorias ">Productos Inclusivos</h3>
+                        </article>
+                    </div>
                 </div>
-
             </section>
         </div>
 

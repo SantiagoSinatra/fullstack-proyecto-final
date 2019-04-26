@@ -5,8 +5,11 @@
 }
 
 .container-fluid {
-    background-color: goldenrod;
     overflow-x: hidden;
+}
+
+.ss-background-main{
+    background-image: url(../img/school.png);
 }
 
 .ss-background-ofertas {
@@ -31,6 +34,16 @@
 
 .ss-imagenes-ofertas{
     width: 90%;
+}
+
+.ss-section-categorias{
+    padding: 0;
+}
+
+.ss-background-productos {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 23px 5px 23px;
 }
 
 .ss-titulo-categorias{
@@ -64,4 +77,17 @@
 }
 .ss-categoria-inclusivos{
     background-color: lightcoral;
+}
+
+
+
+@media (min-width: 768px) {
+    .ss-section-ofertas{
+        padding: 0 20px 0 20px;
+    }
+
+    .ss-section-categorias{
+        padding: 0 20px 0 20px;
+    }    
+
 }
