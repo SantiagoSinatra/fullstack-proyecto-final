@@ -11,13 +11,14 @@
     <!-- css -->
     <link rel="stylesheet" href="css/home.css">
 
-    <title>Elibrary | Tus utiles en un solo lugar</title>
+    <title>Elibrary | Tus utiles con un solo click</title>
 
 </head>
 
 <body>
     <!-- contenedor gral -->
     <div class="container-fluid p-0 ss-background-main">
+        <!-- contenedor del nav -->
         <div class="container-nav-global">
             <?php include("nav-global.php");?>
        </div>

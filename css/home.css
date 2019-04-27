@@ -43,7 +43,7 @@
 }
 
 .ss-background-productos {
-    background-color: white;
+    background-color: #343A40;
     border-radius: 5px;
     padding: 5px 23px 5px 23px;
 }
@@ -52,6 +52,7 @@
     font-size: 1.5em;
     text-align: center;
     text-transform: uppercase;
+    color: white;
 }
 .ss-articulos-categorias{
     font-size: 1.3em;
