@@ -10,6 +10,8 @@
 
 .ss-background-main{
     background-image: url(../img/school.png);
+    background-repeat: repeat;
+    height: 100vh;
 }
 
 .ss-background-ofertas {
