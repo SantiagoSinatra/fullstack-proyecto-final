@@ -15,7 +15,28 @@
 <body>
 	<div class="container ss-propiedades-del-container">
 		<div class="container-nav-global">
-			<?php include("nav-global.php"); ?>
+			<?php include("nav-global.php");
+				include_once("control/funciones.php");
+				if ($_POST) {
+					$errores = validar ($_POST);
+					if (count($errores) == 0) {
+						$usuario = buscarEmail ($_POST["Email"]);
+						if ($usuario == null) {
+							$errores["Email"] = "Usuario no encontrado";
+						}
+					}
+				}
+				if (Password_verify($_POST["Password"],$usuario["Password"])== false) {
+					$errores["Password"] = "Contraseña incorrecta";
+				}
+				SitioUsuario($usuario, $_POST);
+				if (ValidarUsuario()) {
+					header("location : home.php");
+				}else{
+					header("location : loginposta.php");
+				}exit;
+
+			?>
 		</div>
 
 		<div class="row">
