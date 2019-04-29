@@ -46,8 +46,6 @@ if($_POST){
 			?>
 		</div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 			<div class="row text-center col-12">
 			
 				<form class="px-4 py-3" method="POST" action="bienvenida.php">
@@ -78,50 +76,6 @@ if($_POST){
 
 					<button class="loginBtn loginBtn--facebook">
 						Login with Facebook
-					</button>
-=======
-=======
->>>>>>> 6324eab5f5573dd25f9e6f5d5d6dd845f628d8b6
-		<?php include_once("control/funciones.php");
-		if ($_POST) {
-			$errores = validar($_POST);
-			if (count($errores) == 0) {
-				$usuario = buscarEmail($_POST["Email"]);
-				if ($usuario == null) {
-					$errores["Email"] = "Usuario no encontrado";
-				}
-			}
-		}
-		if (password_verify($_POST["password"], $usuario["password"]) == false) {
-			$errores["password"] = "Contraseña incorrecta";
-		}
-		SitioUsuario($usuario, $_POST);
-		if (ValidarUsuario()) {
-			header("location : home.php");
-		} else {
-			header("location : loginposta.php");
-		}
-		exit;
-
-		?>
-
-		<div class="row">
-			<section class="jumbotron col-11 ss-section-login">
-				<article class="ss-article-titulo-login">
-					<h1 class="ss-titulo-login"> elibrary<span class="ss-titulo-login-com">.com</span></h1>
-					<h2 class="ss-subtitulo-login">Tus utiles con un solo click.</h2>
-					<hr>
-				</article>
-				<article class="ss-article-loguearse-login">
-					<form class="caja" action="home.php" method="post">
-						<div>
-							<input type="email" class="form-control" placeholder="Email">
-						</div>
-						<div>
-							<input type="password" name="password" class="form-control" placeholder="Contraseña">
-						</div>
->>>>>>> 6324eab5f5573dd25f9e6f5d5d6dd845f628d8b6
-
 					<button class="loginBtn loginBtn--google">
 						Login with Google
 					</button>
