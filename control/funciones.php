@@ -14,11 +14,13 @@ function validar($datos){
         $errores["nombre"]="Complete su nombre";
     }
     $email = trim($datos["email"]);
+    $emailExistente = buscarEmail($email);
     if(empty($email)){
         $errores["email"]="Complete su email";
     }elseif (!filter_var($email,    FILTER_VALIDATE_EMAIL)){
         $errores["email"]="Email  inválido";
-    
+    }elseif (count($emailExistente)!= 0) {
+        $errores["email"]="Este email ya existe";
     }
     $password = trim($datos["password"]);
     $repassword = trim($datos["repassword"]);
@@ -35,7 +37,7 @@ function validar($datos){
         }
         $nombre = $_FILES["avatar"]["name"];
         $ext = pathinfo($nombre,PATHINFO_EXTENSION);
-        if($ext != "jpg" && $ext != "PNG" && $ext != "jpeg"){
+        if($ext != "jpg" && $ext != "png" && $ext != "jpeg" && $ext != "PNG" && $ext != "JPEG" && $ext != "JPG"){
             $errores["avatar"]="Seleccione un foto";
         }
     }
@@ -73,4 +75,27 @@ function crearRegistro($datos,$imagen){
 function guardar($usuario){
     $jsusuario = json_encode($usuario);
     file_put_contents("usuarios.json", $jsusuario . PHP_EOL ,FILE_APPEND);
+}
+
+function buscarEmail($email){
+
+    $usuarios = abrirBaseDatos();
+    
+    foreach ($usuarios as  $usuario) {
+        if($email === $usuario["email"]){
+            $emailRepetido = "1";
+        }
+    }
+    return $emailRepetido;
+}
+
+
+function abrirBaseDatos(){
+    $baseDatosJson= file_get_contents("usuarios.json");
+    $baseDatosJson = explode(PHP_EOL,$baseDatosJson);
+    array_pop($baseDatosJson);
+    foreach ($baseDatosJson as  $usuarios) {
+        $arrayUsuarios[]= json_decode($usuarios,true);
+    }
+    return $arrayUsuarios;
 }

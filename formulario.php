@@ -39,7 +39,7 @@ if ($_POST){
 				</section>
 				<form class="caja" action="" method="POST" enctype="multipart/form-data" >
 					<div >
-						<span class="span1">Holaaaaa</span>
+						
 						<input type="text" name="nombre" class="form-control" placeholder="Nombre de usuario" value="<?= (isset($errores["nombre"]))? "" : persistir("nombre"); ?>" >
 						<?php if(isset($errores["nombre"])):
       						echo "<span class='span'>*". 
@@ -61,9 +61,7 @@ if ($_POST){
 						<input type="password" name="repassword" class="form-control" placeholder="Repetir contraseña">
 					</div>
 					<section class="section2">
-						<label class="btn btn-primary botonFoto">Seleccione foto de perfil
-						<input name="avatar" style="display: none;" type="file" id="avatar" value="" placeholder="Seleccione foto de perfil" />
-						</label>
+						<input name="avatar"  type="file" id="avatar" value="" placeholder="Seleccione foto de perfil" />
 						<?php if(isset($errores["avatar"])):
       						echo "<span class='span'><br>*". 
       						$errores["avatar"]. "</span>"; endif;?>
