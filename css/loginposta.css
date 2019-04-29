@@ -6,7 +6,11 @@
 body{
 	background-image: url("../img/arcoirist.jpeg") ;
 	background-repeat: no-repeat; 
-	background-size: cover;
+  background-size: cover;
+}
+
+.container{
+  background-color: rgba(255,196,0, 0.6);
 }
 
 .ss-propiedades-del-container{

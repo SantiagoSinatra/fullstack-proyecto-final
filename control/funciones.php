@@ -99,3 +99,22 @@ function abrirBaseDatos(){
     }
     return $arrayUsuarios;
 }
+
+function seteoUsuario($user,$dato){
+    $_SESSION["nombre"]=$user["nombre"];
+    $_SESSION["email"] = $user["email"];
+    $_SESSION["perfil"]= $user["perfil"];
+    $_SESSION["avatar"]= $user["avatar"];
+    if(isset($dato["recordar"]) ){
+        setcookie("email",$dato["password"],time()+3600);
+        setcookie("password",$dato["password"],time()+3600);
+    }
+}
+
+function validarUsuario(){
+    if ($_SESSION["email"]) {
+        return true;
+    }elseif ($_COOKIE["password"]) {
+
+    }
+}
