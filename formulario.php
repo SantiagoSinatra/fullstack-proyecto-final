@@ -1,14 +1,13 @@
 <?php
 include_once("control/funciones.php");
-if ($_POST){
-  $errores=validar($_POST);
-  if (count($errores)==0){
-    $avatar = crearAvatar($_FILES);
-    $registro = crearRegistro($_POST,$avatar);
-    guardar($registro);
-    header("location: loginposta.php");
-  }
-
+if ($_POST) {
+	$errores = validar($_POST);
+	if (count($errores) == 0) {
+		$avatar = crearAvatar($_FILES);
+		$registro = crearRegistro($_POST, $avatar);
+		guardar($registro);
+		header("location: loginposta.php");
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -27,6 +26,9 @@ if ($_POST){
 
 <body class="l-body">
 	<div class="container">
+		<div class="container-nav-global">
+			<?php include("nav-global.php"); ?>
+		</div>
 		<article class="col" class="article1">
 			<div class="jumbotron">
 				<section class="section1">
@@ -37,37 +39,41 @@ if ($_POST){
 					<p class="lead">Tus utiles con un solo click.</p>
 					<hr class="my-4">
 				</section>
-				<form class="caja" action="" method="POST" enctype="multipart/form-data" >
-					<div >
+				<form class="caja" action="" method="POST" enctype="multipart/form-data">
+					<div>
 						<span class="span1">Holaaaaa</span>
-						<input type="text" name="nombre" class="form-control" placeholder="Nombre de usuario" value="<?= (isset($errores["nombre"]))? "" : persistir("nombre"); ?>" >
-						<?php if(isset($errores["nombre"])):
-      						echo "<span class='span'>*". 
-      						$errores["nombre"]. "</span>"; endif;?>
+						<input type="text" name="nombre" class="form-control" placeholder="Nombre de usuario" value="<?= (isset($errores["nombre"])) ? "" : persistir("nombre"); ?>">
+						<?php if (isset($errores["nombre"])) :
+							echo "<span class='span'>*" .
+								$errores["nombre"] . "</span>";
+						endif; ?>
 					</div>
-					<div >
-						<input type="email" name="email" class="form-control" value="<?=(isset($errores["email"]))? "" : persistir("email");?>" placeholder="Email">
-						<?php if(isset($errores["email"])):
-      						echo "<span class='span'>*". 
-      						$errores["email"]. "</span>"; endif;?>
+					<div>
+						<input type="email" name="email" class="form-control" value="<?= (isset($errores["email"])) ? "" : persistir("email"); ?>" placeholder="Email">
+						<?php if (isset($errores["email"])) :
+							echo "<span class='span'>*" .
+								$errores["email"] . "</span>";
+						endif; ?>
 					</div>
 					<div>
 						<input type="password" name="password" class="form-control" placeholder="Contraseña">
-						<?php if(isset($errores["password"])):
-      						echo "<span class='span'>*". 
-      						$errores["password"]. "</span>"; endif;?>
+						<?php if (isset($errores["password"])) :
+							echo "<span class='span'>*" .
+								$errores["password"] . "</span>";
+						endif; ?>
 					</div>
 					<div>
 						<input type="password" name="repassword" class="form-control" placeholder="Repetir contraseña">
 					</div>
 					<section class="section2">
 						<label class="btn btn-primary botonFoto">Seleccione foto de perfil
-						<input name="avatar" style="display: none;" type="file" id="avatar" value="" placeholder="Seleccione foto de perfil" />
+							<input name="avatar" style="display: none;" type="file" id="avatar" value="" placeholder="Seleccione foto de perfil" />
 						</label>
-						<?php if(isset($errores["avatar"])):
-      						echo "<span class='span'><br>*". 
-      						$errores["avatar"]. "</span>"; endif;?>
-            			<br>   
+						<?php if (isset($errores["avatar"])) :
+							echo "<span class='span'><br>*" .
+								$errores["avatar"] . "</span>";
+						endif; ?>
+						<br>
 					</section>
 					<button class="btn btn-primary btn" type="submit" name="button">Registrarse</button>
 					<button class="btn btn-primary btn" type="reset" name="button">Reiniciar</button>
