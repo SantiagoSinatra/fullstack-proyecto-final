@@ -16,28 +16,31 @@
 	<div class="container ss-propiedades-del-container">
 		<div class="container-nav-global">
 			<?php include("nav-global.php");
-				include_once("control/funciones.php");
-				if ($_POST) {
-					$errores = validar ($_POST);
-					if (count($errores) == 0) {
-						$usuario = buscarEmail ($_POST["Email"]);
-						if ($usuario == null) {
-							$errores["Email"] = "Usuario no encontrado";
-						}
-					}
-				}
-				if (Password_verify($_POST["Password"],$usuario["Password"])== false) {
-					$errores["Password"] = "Contraseña incorrecta";
-				}
-				SitioUsuario($usuario, $_POST);
-				if (ValidarUsuario()) {
-					header("location : home.php");
-				}else{
-					header("location : loginposta.php");
-				}exit;
-
 			?>
 		</div>
+
+		<?php include_once("control/funciones.php");
+		if ($_POST) {
+			$errores = validar($_POST);
+			if (count($errores) == 0) {
+				$usuario = buscarEmail($_POST["Email"]);
+				if ($usuario == null) {
+					$errores["Email"] = "Usuario no encontrado";
+				}
+			}
+		}
+		if (password_verify($_POST["password"], $usuario["password"]) == false) {
+			$errores["password"] = "Contraseña incorrecta";
+		}
+		SitioUsuario($usuario, $_POST);
+		if (ValidarUsuario()) {
+			header("location : home.php");
+		} else {
+			header("location : loginposta.php");
+		}
+		exit;
+
+		?>
 
 		<div class="row">
 			<section class="jumbotron col-11 ss-section-login">
@@ -48,11 +51,11 @@
 				</article>
 				<article class="ss-article-loguearse-login">
 					<form class="caja" action="home.php" method="post">
-						<div class="password">
+						<div>
 							<input type="email" class="form-control" placeholder="Email">
 						</div>
-						<div class="password">
-							<input type="password" class="form-control" placeholder="Contraseña">
+						<div>
+							<input type="password" name="password" class="form-control" placeholder="Contraseña">
 						</div>
 
 						<button class="btn btn-primary btn" type="submit" name="button">Iniciar sesión</button>
