@@ -47,6 +47,7 @@ if($_POST){
 		</div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<div class="row text-center col-12">
 			
 				<form class="px-4 py-3" method="POST" action="bienvenida.php">
@@ -79,6 +80,8 @@ if($_POST){
 						Login with Facebook
 					</button>
 =======
+=======
+>>>>>>> 6324eab5f5573dd25f9e6f5d5d6dd845f628d8b6
 		<?php include_once("control/funciones.php");
 		if ($_POST) {
 			$errores = validar($_POST);
