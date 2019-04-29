@@ -29,7 +29,7 @@ if ($_POST) {
 		<div class="container-nav-global">
 			<?php include("nav-global.php"); ?>
 		</div>
-		<article class="col" class="article1">
+		<article class="col mt-5" class="article1">
 			<div class="jumbotron">
 				<section class="section1">
 					<h1 class="h1">

@@ -26,7 +26,7 @@
 					<hr>
 				</article>
 				<article class="ss-article-loguearse-login">
-					<form class="caja" action="home.php" method="post">
+					<form class="caja" action="bienvenida.php" method="post">
 						<div class="password">
 							<input type="email" class="form-control" placeholder="Email">
 						</div>
