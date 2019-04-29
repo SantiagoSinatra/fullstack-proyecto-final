@@ -1,14 +1,13 @@
 <?php
 include_once("control/funciones.php");
-if ($_POST){
-  $errores=validar($_POST);
-  if (count($errores)==0){
-    $avatar = crearAvatar($_FILES);
-    $registro = crearRegistro($_POST,$avatar);
-    guardar($registro);
-    header("location: loginposta.php");
-  }
-
+if ($_POST) {
+	$errores = validar($_POST);
+	if (count($errores) == 0) {
+		$avatar = crearAvatar($_FILES);
+		$registro = crearRegistro($_POST, $avatar);
+		guardar($registro);
+		header("location: loginposta.php");
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -27,7 +26,10 @@ if ($_POST){
 
 <body class="l-body">
 	<div class="container">
-		<article class="col" class="article1">
+		<div class="container-nav-global">
+			<?php include("nav-global.php"); ?>
+		</div>
+		<article class="col mt-5" class="article1">
 			<div class="jumbotron">
 				<section class="section1">
 					<h1 class="h1">
@@ -45,17 +47,19 @@ if ($_POST){
       						echo "<span class='span'>*". 
       						$errores["nombre"]. "</span>"; endif;?>
 					</div>
-					<div >
-						<input type="email" name="email" class="form-control" value="<?=(isset($errores["email"]))? "" : persistir("email");?>" placeholder="Email">
-						<?php if(isset($errores["email"])):
-      						echo "<span class='span'>*". 
-      						$errores["email"]. "</span>"; endif;?>
+					<div>
+						<input type="email" name="email" class="form-control" value="<?= (isset($errores["email"])) ? "" : persistir("email"); ?>" placeholder="Email">
+						<?php if (isset($errores["email"])) :
+							echo "<span class='span'>*" .
+								$errores["email"] . "</span>";
+						endif; ?>
 					</div>
 					<div>
 						<input type="password" name="password" class="form-control" placeholder="Contraseña">
-						<?php if(isset($errores["password"])):
-      						echo "<span class='span'>*". 
-      						$errores["password"]. "</span>"; endif;?>
+						<?php if (isset($errores["password"])) :
+							echo "<span class='span'>*" .
+								$errores["password"] . "</span>";
+						endif; ?>
 					</div>
 					<div>
 						<input type="password" name="repassword" class="form-control" placeholder="Repetir contraseña">
