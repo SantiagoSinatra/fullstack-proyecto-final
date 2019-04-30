@@ -14,7 +14,7 @@ if($_POST){
     }
     seteoUsuario($usuario,$_POST);
     if (validarUsuario()) {
-      header("location: home.php");
+      header("location: index.php");
       exit;
     }else {
       header("location: formulario.php");
