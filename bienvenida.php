@@ -1,30 +1,3 @@
-<?php
-include_once("control/funciones.php");
-if($_POST){
-  
-  $errores= validar($_POST,"login");
-  if(count($errores)==0){
-    $usuario = buscarEmail($_POST["email"]);
-    if($usuario == null){
-      $errores["email"]="Usuario no existe";
-    }else{
-      if(password_verify($_POST["password"],$usuario["password"])===false){
-        $errores["password"]="Error en los datos verifique";
-      }
-    }
-    seteoUsuario($usuario,$_POST);
-    if (validarUsuario()) {
-      header("location: index.php");
-      exit;
-    }else {
-      header("location: formulario.php");
-      exit;
-    }
-  }
-
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
