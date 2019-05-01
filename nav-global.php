@@ -26,7 +26,7 @@
                         <a class="nav-link" href="loginposta.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="formulario.php">Registrarse</a>
+                        <a class="nav-link" href="ss-formulario.php">Registrarse</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
