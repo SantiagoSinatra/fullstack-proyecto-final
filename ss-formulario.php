@@ -1,10 +1,11 @@
 <?php
 //esto es lo que va a hacer el formulario una vez que se realice el envio. 
+require_once("ss-helpers.php");
 include_once("control/ss-funciones.php");
-if($_POST){ //si ocurre un post hace lo de abajo
-    $erroresEnLosInput = validar($_POST, "delRegistro");
-    if(count($erroresEnLosInput)==0){
-        
+if ($_POST) { //si ocurre un post hace lo de abajo
+    $erroresEnLosInput = ssValidarDatos($_POST, "delRegistro");
+    if (count($erroresEnLosInput) == 0) {
+        dd($_POST);
     }
 }
 
@@ -29,8 +30,19 @@ if($_POST){ //si ocurre un post hace lo de abajo
     <div class="container">
         <!-- contenedor del nav -->
         <div class="ss-container-nav-global">
-            <?php include("nav-global.php"); ?>
+            <?php // include("nav-global.php"); ?>
         </div>
+
+        <!-- avisador de errores -->
+        <?php
+        if (isset($erroresEnLosInput)) : ?>
+            <ul>
+                <?php
+                foreach ($erroresEnLosInput as $key => $value) : ?>
+                    <li><?= $value; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
 
         <section class="row ss-section-formulario">
             <article class="col-12">
@@ -38,20 +50,20 @@ if($_POST){ //si ocurre un post hace lo de abajo
                     <!-- post para que los datos vayan encriptados, enctype es el tipo de encripcion que se le va a hacer, y se pone multipart/form-data porque se van a mandar files (la foto del usuario) -->
                     <div class="col-12 ss-item-formulario-global">
                         <label>Usuario:</label>
-                        <input name="nombreDeUsuario" id="nombreDeUsuario" type="text" value="" placeholder="ingrese un nombre">
+                        <input name="nombreDeUsuario" id="nombreDeUsuario" type="text" value="<?= (isset($errores["nombreDeUsuario"])) ? "" : persistirInputUsuario("nombreDeUsuario"); ?>" placeholder="ingrese un nombre">
                     </div>
                     <div class="col-12 ss-item-formulario-global">
                         <label>Email:</label>
-                        <input name="emailDelUsuario" id="emailDelUsuario" type="text" value="" placeholder="ingrese un email">
+                        <input name="emailDelUsuario" id="emailDelUsuario" type="text" value="<?= (isset($errores["emailDelUsuario"])) ? "" : persistirInputUsuario("emailDelUsuario"); ?>" placeholder="ingrese un email">
                     </div>
                     <div class="col-12 ss-item-formulario-global">
                         <label>Contraseña:</label>
-                        <input name="passDelUsuario" id="passDelUsuario" type="password" value="" placeholder="ingrese una contraseña">
+                        <input name="passDelUsuario" id="passDelUsuario" type="password" value="<?= (isset($errores["passDelUsuario"])) ? "" : persistirInputUsuario("passDelUsuario"); ?>" placeholder="ingrese una contraseña">
                     </div>
                     <div class="col-12 ss-item-formulario-global">
                         <label>Confirmar Constraeña:</label>
-                        <input name="rePassDelUsuario" type="rePassDelUsuario" type="password" value="" placeholder="ingrese contraseña nuevamente">
-                    </div>                 
+                        <input name="rePassDelUsuario" id="rePassDelUsuario" type="password" value="<?= (isset($errores["rePassDelUsuario"])) ? "" : persistirInputUsuario("rePassDelUsuario"); ?>" placeholder="ingrese contraseña nuevamente">
+                    </div>
                     <div class="col-12 ss-item-formulario-global">
                         <label>Foto de Usuario:</label>
                         <input name="avatarDelUsuario" type="file" value="">
