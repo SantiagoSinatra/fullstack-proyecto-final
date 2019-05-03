@@ -3,9 +3,18 @@
 require_once("ss-helpers.php");
 include_once("control/ss-funciones.php");
 if ($_POST) { //si ocurre un post hace lo de abajo
-    $erroresEnLosInput = ssValidarDatos($_POST, "delRegistro");
-    if (count($erroresEnLosInput) == 0) {
-        dd($_POST);
+    $errores = ssValidarDatos($_POST, "delRegistro");
+    if (count($errores) == 0) {
+        $usuarioRegistrandose = buscarSiExistePorEmail($_POST["emailDelUsuario"]);
+        if($usuarioRegistrandose != null){
+            $errores["enEmail"]="El usuario ya existe.";
+        }else{
+            $avatarDelUsuario = armarAvatar($_FILES);
+            $registro = armarRegistro($_POST, $avatarDelUsuario);
+            guardarUsuario($registro);
+            header("location:loginposta.php");
+            exit;
+        }
     }
 }
 
@@ -35,10 +44,10 @@ if ($_POST) { //si ocurre un post hace lo de abajo
 
         <!-- avisador de errores -->
         <?php
-        if (isset($erroresEnLosInput)) : ?>
+        if (isset($errores)) : ?>
             <ul>
                 <?php
-                foreach ($erroresEnLosInput as $key => $value) : ?>
+                foreach ($errores as $key => $value) : ?>
                     <li><?= $value; ?></li>
                 <?php endforeach; ?>
             </ul>
