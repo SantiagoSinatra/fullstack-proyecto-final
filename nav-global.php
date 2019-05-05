@@ -23,11 +23,19 @@
                         <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ss-login.php">Login</a>
+                        <?php if(validarCookiesDeUsuario()) { ?>
+                        <a class="nav-link" href=""> <?php echo $_SESSION["nombreDeUsuario"];?> </a>
+                        <?php }else{ ?>
+                        <a class="nav-link" href="ss-login.php">Login</a> <?php } ?>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="ss-formulario.php">Registrarse</a>
+                        <?php if(validarCookiesDeUsuario()) { ?>
+                        <a class="nav-link" href="">Logout</a>
+                        <?php }else{ ?>
+                        <a class="nav-link" href="ss-formulario.php">Registrarse</a> <?php } ?>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Nuestros Productos

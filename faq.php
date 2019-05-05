@@ -1,3 +1,7 @@
+<?php 
+include_once("control/ss-funciones.php");
+include_once("ss-helpers.php");
+?>
 DOCTYPE html>
 <html lang="es">
 
