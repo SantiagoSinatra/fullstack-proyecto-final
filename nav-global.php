@@ -23,7 +23,7 @@
                         <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="loginposta.php">Login</a>
+                        <a class="nav-link" href="ss-login.php">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="ss-formulario.php">Registrarse</a>
