@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.ss-section-login{
+    margin-top: 65px;
+}
+
+.ss-item-login-global{
+    text-align: center;
+}
