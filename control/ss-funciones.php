@@ -158,9 +158,9 @@ function iniciarSesionDeUsuario($usuarioLogueandose, $datosDelPost)
 //funcion que valida la variable de sesion email para ver si el usuario se logueo y si no, valida las cookies para ver si el usuario habia querido ser recordado cuando se logueo. 
 function validarCookiesDeUsuario()
 {
-    if ($_SESSION["emailDelUsuario"]) {
+    if (isset($_SESSION["emailDelUsuario"])) {
         return true;
-    } elseif ($_COOKIE["emailDelUsuario"]) {
+    } elseif ( isset($_COOKIE["emailDelUsuario"])) {
         $_SESSION["emailDelUsuario"] = $_COOKIE["email"];
         return true;
     } else {

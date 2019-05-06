@@ -31,7 +31,7 @@
 
                     <li class="nav-item">
                         <?php if(validarCookiesDeUsuario()) { ?>
-                        <a class="nav-link" href="">Logout</a>
+                        <a class="nav-link" href="ss-logout.php">Logout</a>
                         <?php }else{ ?>
                         <a class="nav-link" href="ss-formulario.php">Registrarse</a> <?php } ?>
                     </li>
