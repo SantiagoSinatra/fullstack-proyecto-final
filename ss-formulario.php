@@ -12,7 +12,7 @@ if ($_POST) { //si ocurre un post hace lo de abajo
             $avatarDelUsuario = armarAvatar($_FILES);
             $registro = armarRegistro($_POST, $avatarDelUsuario);
             guardarUsuario($registro);
-            header("location:loginposta.php");
+            header("location:ss-login.php");
             exit;
         }
     }

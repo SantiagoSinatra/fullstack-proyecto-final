@@ -1,3 +1,11 @@
+<?php
+    include_once("control/ss-funciones.php");
+    include_once("ss-helpers.php");
+    if(!validarCookiesDeUsuario()){
+        header("location:ss-login.php");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 

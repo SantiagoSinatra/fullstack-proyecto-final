@@ -2,4 +2,4 @@
 session_start();
 session_destroy();
 setcookie("passDelUsuario", "", time()-1);
-header("location: ss-login.php");
+header("location: index.php");
