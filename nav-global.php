@@ -24,7 +24,7 @@
                     </li>
                     <li class="nav-item">
                         <?php if(validarCookiesDeUsuario()) { ?>
-                        <a class="nav-link" href=""> <?php echo $_SESSION["nombreDeUsuario"];?> </a>
+                        <a class="nav-link" href="ss-perfil.php"> <?php echo $_SESSION["nombreDeUsuario"];?> </a>
                         <?php }else{ ?>
                         <a class="nav-link" href="ss-login.php">Login</a> <?php } ?>
                     </li>

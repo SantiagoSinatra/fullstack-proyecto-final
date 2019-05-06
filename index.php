@@ -14,7 +14,7 @@ include_once("ss-helpers.php");
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- css -->
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/ss-index.css">
 
     <title>Elibrary | Tus utiles con un solo click</title>
 
