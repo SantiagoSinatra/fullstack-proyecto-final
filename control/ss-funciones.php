@@ -89,8 +89,9 @@ function guardarUsuario($usuarioCreado)
     file_put_contents('ss-usuarios.json', $userEnJson . PHP_EOL, FILE_APPEND);
 }
 
-function abrirBaseDeDatos()
-{
+
+
+function abrirBaseDeDatos(){
     if (file_exists("ss-usuarios.json")) { // se fija si existe el file o directory que le pasemos.
         $baseDatosEnJson = file_get_contents("ss-usuarios.json"); // devuelve el contenido de un file en forma de string.
         $baseDatosEnJson = explode(PHP_EOL, $baseDatosEnJson); // toma el string y lo convierte en un array json de varios string.
@@ -102,6 +103,36 @@ function abrirBaseDeDatos()
     } else {
         return null;
     }
+}
+
+//Esta función la cree para lograr determinar la creación del archivo json, pero ahora con la nueva clave del usuario, ya que el usuairo se le habia olvidado la misma, lo puedo hacer en una sóla función, sin embargo lo realice por separado, para que ustedes lo comprendieran mejor, trabajando todo por parte
+function armarRegistroOlvide($datos){
+    $usuarios = abrirBaseDeDatos();
+    
+    foreach ($usuarios as $key=>$usuario) {
+        
+        if($datos["email"]==$usuario["email"]){
+            //Esta línea se las comente para que a futuro puedan probar si la clave nueva la van a grabar coorectamente, la idea es verla antes de hashearla.
+            //$usuario["password"]= $datos["password"];
+            $usuario["password"]= password_hash($datos["password"],PASSWORD_DEFAULT);
+            $usuarios[$key] = $usuario;    
+        }
+        $usuarios[$key] = $usuario;    
+    }
+//Esta función no retorna nada, ya que su  responsabilidad es guardar al usuario, pero con su nueva contraseña
+}
+
+//Creamos una funcion aparte para borrar un archivo del registro.
+function borrarRegistro($datos){
+    $usuarios = abrirBaseDeDatos();
+        
+    //Esto se los coloque para que sepan que con esta función podemos borrar un archivo
+    unlink("ss-usuarios.json");
+    foreach ($usuarios as  $usuario) {
+        $jsusuario = json_encode($usuario);
+        file_put_contents('ss-usuarios.json',$jsusuario. PHP_EOL,FILE_APPEND);
+    }
+ 
 }
 
 function buscarSiExistePorEmail($inputEmail)
