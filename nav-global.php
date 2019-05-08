@@ -13,8 +13,8 @@
 <body>
     <div class="container-fluid p-0">
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
-            <h1 class="navbar-brand ml-0" href="#">Elibrary<span class="ss-nav-titulo-span">.com</span></h1>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="ml-0" href="index.php"><h1 class="navbar-brand ml-0" href="#">Elibrary<span class="ss-nav-titulo-span">.com</span></h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"></a>
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">

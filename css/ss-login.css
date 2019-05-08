@@ -3,6 +3,18 @@
     margin: 0 auto;
     padding: 0;
 }
+.ss-article-login-title{
+    color: white;
+    text-align: center;
+    background-color:  rgba(255,255,255,0.10);
+    padding: 10px;
+    margin-top: 20vh;
+}
+
+.ss-h1-login-title{
+    font-weight: 330;
+}
+
 .ss-item-login-errores{
     color: white;
     text-align: center;
@@ -24,9 +36,7 @@
     width: 100vw;
     background-image: url(../img/backgrounds/background-login.jpg);
     background-size: cover;
-}
-.ss-section-login{
-    margin-top: 20vh;
+    
 }
 
 .ss-article-login{
@@ -81,8 +91,9 @@
 
 .ss-login-button-enter:hover{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    background-color: rgba(0, 0, 0, 0.20); 
-    border: 1px solid rgba(255,255,255,0.80);
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(58, 199, 182);
+    border: 2px solid rgba(58, 199, 182, 0.4);
     transition-duration: 1.5s;
 }
 
@@ -93,4 +104,21 @@
     width: 50vw;
     color: rgba(255,255,255,0.40);
     text-transform: uppercase;
+}
+
+
+@media (min-width: 992px){
+
+    .ss-input-login-global{
+        width: 20vw;
+    }
+
+    .ss-login-button-borrar{
+        width: 20vw;
+    }
+
+    .ss-login-button-enter{
+        width: 20vw;
+    }
+
 }

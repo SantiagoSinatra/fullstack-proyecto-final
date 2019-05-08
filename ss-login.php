@@ -52,13 +52,19 @@ if ($_POST) {
             </div>
 
         </nav>
-        <section class="row ss-section-login">
+        <section class="row">
+            <article class=" col-9 col-lg-3 ss-article-login-title">
+                <h1 class="ss-h1-login-title">Iniciar Sesión</h1>
+            </article>
+        </section>
 
+
+        <section class="row ss-section-login">
 
             <!-- avisador de errores -->
             <?php
             if (isset($errores)) : ?>
-                <article class="col-9 ss-article-login-errores mb-3">
+                <article class="col-9 ss-article-login-errores mt-3 mb-3">
                     <ul class="ss-item-login-errores ss-no-decoration">
                         <?php
                         foreach ($errores as $key => $value) : ?>
@@ -69,7 +75,7 @@ if ($_POST) {
             <?php endif; ?>
 
 
-            <article class="col-9 ss-article-login">
+            <article class="col-9 col-lg-3 ss-article-login">
                 <form action="" method="POST">
                     <div class="ss-item-login-global">
                         <input class="ss-input-login-global" name="emailDelUsuario" id="emailDelUsuario" type="text" value="<?= (isset($errores["emailDelUsuario"])) ? "" : persistirInputUsuario("emailDelUsuario"); ?>" placeholder="email">
