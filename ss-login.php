@@ -64,7 +64,7 @@ if ($_POST) {
             <!-- avisador de errores -->
             <?php
             if (isset($errores)) : ?>
-                <article class="col-9 ss-article-login-errores mt-3 mb-3">
+                <article class="col-9 col-lg-3 ss-article-login-errores mt-3 mb-3">
                     <ul class="ss-item-login-errores ss-no-decoration">
                         <?php
                         foreach ($errores as $key => $value) : ?>
