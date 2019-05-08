@@ -5,7 +5,7 @@
 class Validador
 {
 	
-public function validacionUsuario($usuario,$repassword){
+public function validacionUsuarioRegistro($usuario,$repassword){
 	$errores=[];
 	$nombre = trim($usuario->getNombreDeUsuario());
 	
@@ -16,6 +16,12 @@ public function validacionUsuario($usuario,$repassword){
     }
 
     $email = trim($usuario->getEmailDelUsuario());
+    if(isset($email)){
+        if(empty($email)){
+            $errores["emailDelUsuario"]= "El campo email no debe estar vacio";
+        }
+    }
+
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $errores["emailDelUsuario"]="Email invalido";
     }
@@ -34,11 +40,23 @@ public function validacionUsuario($usuario,$repassword){
             $errores["repassword"]="Las contraseñas no coinciden";
         }
     }
-    
-   
 
     return $errores;
 	}
-}
+   public function validacionUsuarioLogin($datosDelPost){
+    $errores=[];
+    $email = trim($usuarioLogin->getEmailDelUsuario());
+    if(isset($email)){
+        if(empty($email)){
+            $errores["emailDelUsuario"]= "Ingrese email";
+        }else{
+            $email // aca tenemos que leer el email y actualizar con basejson
+        }
+
+    }
+
+    }
+
+   }
 }
 ?>

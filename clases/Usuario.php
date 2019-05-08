@@ -8,7 +8,7 @@
         private $perfilDelUsuario;
 
         //constructor de Usuario.
-        public function __construct($nombreDeUsuario, $emailDeUsuario, $passDelUsuario=null, $rePassDelUsuario=null, $avatarDelUsuario=null, $perfilDelUsuario=null){
+        public function __construct($nombreDeUsuario=null, $emailDeUsuario, $passDelUsuario=null, $rePassDelUsuario=null, $avatarDelUsuario=null, $perfilDelUsuario=null){
             $this->nombreDeUsuario = $nombreDeUsuario;
             $this->emailDeUsuario = $emailDeUsuario;
             $this->passDelUsuario = $nombreDeUsuario;

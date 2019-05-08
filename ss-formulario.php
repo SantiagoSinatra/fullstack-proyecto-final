@@ -1,11 +1,11 @@
 <?php
 require_once("autoload.php");
 if ($_POST){
-  $usuario = new Usuario($_POST["nombre"],$_POST["email"],$_POST["password"]);
+  $usuario = new Usuario($_POST["nombreDeUsuario"],$_POST["emailDelUsuario"],$_POST["passDelUsuario"]);
   
   //$passwordEncriptado = password_hash($usuario->getPassword(),PASSWORD_DEFAULT);
   //dd($passwordEncriptado);
-  $errores = $validar->validacionUsuario($usuario, $_POST["repassword"]);
+  $errores = $validar->validacionUsuarioRegistro($usuario, $_POST["repassword"]);
   if(count($errores)==0){
     $registroUsuario = $registro->armarUsuario($usuario);
     $json->guardar($registroUsuario);

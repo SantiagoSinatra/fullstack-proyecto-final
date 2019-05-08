@@ -1,5 +1,10 @@
 <?php
-include_once("control/ss-funciones.php");
+include_once("autoload.php");
+if ($_POST) {
+    $usuarioLogin = new Usuario($_POST["emailDelUsuario"],$_POST["passDelUsuario"]);
+
+}
+/*include_once("control/ss-funciones.php");
 include_once("ss-helpers.php");
 if ($_POST) {
 
@@ -24,6 +29,7 @@ if ($_POST) {
         }
     }
 }
+*/
 
 ?>
 <!DOCTYPE html>
