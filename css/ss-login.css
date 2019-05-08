@@ -3,11 +3,94 @@
     margin: 0 auto;
     padding: 0;
 }
+.ss-item-login-errores{
+    color: white;
+    text-align: center;
+    margin-bottom: 5px;
+}
 
+.ss-article-login-errores{
+    background-color:  rgba(255, 0, 0, 0.5);
+    padding: 5px;
+}
+
+
+.ss-no-decoration{
+    list-style-type: none;
+}
+
+.ss-contenedor-login{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../img/backgrounds/background-login.jpg);
+    background-size: cover;
+}
 .ss-section-login{
-    margin-top: 65px;
+    margin-top: 20vh;
+}
+
+.ss-article-login{
+    background-color:  rgba(255,255,255,0.10);
+    padding: 20px;
+}
+
+.ss-nav-login{
+    height: 70px;
 }
 
 .ss-item-login-global{
+    color: white;
     text-align: center;
+    margin-bottom: 5px;
+}
+
+.ss-input-login-global{
+    border: 1px solid rgba(255,255,255,0.40);
+    width: 50vw;
+    border-radius: 2px;
+    background: none;
+    color: rgba(255,255,255,0.40);
+    text-align: center;
+}
+
+.ss-input-login-global::placeholder{
+    color: rgba(255,255,255,0.40);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ss-login-recordar{
+    margin-top: 5px;
+    color: rgba(255,255,255,0.40);
+    text-transform: uppercase;
+}
+
+.ss-a-login{
+    color: white;
+}
+
+.ss-login-button-enter{
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0); 
+    border: 2px solid rgba(76, 0, 255, 0.4);
+    width: 50vw;
+    color: rgba(76, 0, 255, 0.4);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.ss-login-button-enter:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgba(0, 0, 0, 0.20); 
+    border: 1px solid rgba(255,255,255,0.80);
+    transition-duration: 1.5s;
+}
+
+.ss-login-button-borrar{
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0); 
+    border: 1px solid rgba(255,255,255,0.40);
+    width: 50vw;
+    color: rgba(255,255,255,0.40);
+    text-transform: uppercase;
 }

@@ -43,44 +43,56 @@ if ($_POST) {
 </head>
 
 <body>
-    <div class="container">
-        <!-- contenedor del nav -->
-        <div class="ss-container-nav-global">
-            <?php //include("nav-global.php"); ?>
-        </div>
+    <div class="container-fluid ss-contenedor-login">
+        <nav class="row ss-nav-login">
 
-        <!-- avisador de errores -->
-        <?php
-        if (isset($errores)) : ?>
-            <ul>
-                <?php
-                foreach ($errores as $key => $value) : ?>
-                    <li><?= $value; ?></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
+            <!-- contenedor del nav -->
+            <div class="container-nav-global">
+                <?php include("nav-global.php"); ?>
+            </div>
+
+        </nav>
         <section class="row ss-section-login">
-            <article class="col-12">
+
+
+            <!-- avisador de errores -->
+            <?php
+            if (isset($errores)) : ?>
+                <article class="col-9 ss-article-login-errores mb-3">
+                    <ul class="ss-item-login-errores ss-no-decoration">
+                        <?php
+                        foreach ($errores as $key => $value) : ?>
+                            <li><?= $value; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </article>
+            <?php endif; ?>
+
+
+            <article class="col-9 ss-article-login">
                 <form action="" method="POST">
                     <div class="ss-item-login-global">
-                        <label>Email:</label>
-                        <input name="emailDelUsuario" id="emailDelUsuario" type="text" value="<?= (isset($errores["emailDelUsuario"])) ? "" : persistirInputUsuario("emailDelUsuario"); ?>" placeholder="ingrese su email">
+                        <input class="ss-input-login-global" name="emailDelUsuario" id="emailDelUsuario" type="text" value="<?= (isset($errores["emailDelUsuario"])) ? "" : persistirInputUsuario("emailDelUsuario"); ?>" placeholder="email">
                     </div>
 
-                    <div class="ss-item-login-global">
-                        <label>Contraseña:</label>
-                        <input name="passDelUsuario" id="passDelUsuario" type="password" value="<?= (isset($errores["passDelUsuario"])) ? "" : persistirInputUsuario("passDelUsuario"); ?>" placeholder="ingrese su contraseña">
+                    <div class="ss-item-login-global mt-3">
+                        <input class="ss-input-login-global" name="passDelUsuario" id="passDelUsuario" type="password" value="<?= (isset($errores["passDelUsuario"])) ? "" : persistirInputUsuario("passDelUsuario"); ?>" placeholder="contraseña">
                     </div>
 
                     <div class="ss-item-login-global">
                         <input name="recordarUsuario" id="recordarUsuario" type="checkbox" value="recordarUsuario">
-                        <label>Recordarme</label>
-                        <a href="">Olvidaste tu contraseña? Hacé click acá!</a>
+                        <label class="ss-login-recordar">Recordarme</label>
+                    </div>
+                    <div class="ss-item-login-global">
+                        <a class="ss-a-login" href="">Olvidaste tu contraseña? <br> Hacé click acá!</a>
                     </div>
 
                     <div class="ss-item-login-global">
-                        <button class="btn-buttom btn-primary" type="submit">Entrar</button>
+                        <button class="ss-login-button-borrar" type="reset">Borrar</button>
+                    </div>
 
+                    <div class="ss-item-login-global">
+                        <button class="ss-login-button-enter" type="submit">Entrar</button>
                     </div>
 
                 </form>
