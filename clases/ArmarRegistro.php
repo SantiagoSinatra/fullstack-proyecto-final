@@ -7,13 +7,14 @@ class ArmarRegistro
 	
 		public function armarUsuario($registro){
 		$usuario = [
-        "nombreDeUsuario"=>$registro->getNombre(),
-        "emailDelUsuario"=>$registro->getEmail(),
-        "passDelUsuario"=> Encriptador::hashPassword($registro->getPassword()),
+        "nombreDeUsuario"=>$registro->getNombreDeUsuario(),
+        "emailDelUsuario"=>$registro->getEmailDelUsuario(),
+        "passDelUsuario"=> Encriptador::encriptarPass($registro->getPassDelUsuario()),
         "perfilDelUsuario"=>1
     ];
     
     return $usuario;
 	}
+	// public function armarAvatar
 }
 ?>

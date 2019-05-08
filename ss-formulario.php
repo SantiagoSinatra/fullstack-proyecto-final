@@ -1,6 +1,18 @@
 <?php
-//esto es lo que va a hacer el formulario una vez que se realice el envio. 
-require_once("ss-helpers.php");
+require_once("autoload.php");
+if ($_POST){
+  $usuario = new Usuario($_POST["nombre"],$_POST["email"],$_POST["password"]);
+  
+  //$passwordEncriptado = password_hash($usuario->getPassword(),PASSWORD_DEFAULT);
+  //dd($passwordEncriptado);
+  $errores = $validar->validacionUsuario($usuario, $_POST["repassword"]);
+  if(count($errores)==0){
+    $registroUsuario = $registro->armarUsuario($usuario);
+    $json->guardar($registroUsuario);
+    redirect ("login.php");
+  }
+} 
+/*require_once("ss-helpers.php");
 include_once("control/ss-funciones.php");
 if ($_POST) { //si ocurre un post hace lo de abajo
     $errores = ssValidarDatos($_POST, "delRegistro");
@@ -16,7 +28,7 @@ if ($_POST) { //si ocurre un post hace lo de abajo
             exit;
         }
     }
-}
+}*/
 
 ?>
 <!DOCTYPE html>
