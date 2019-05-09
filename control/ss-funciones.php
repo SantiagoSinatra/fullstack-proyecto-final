@@ -35,7 +35,6 @@ function ssValidarDatos($datosEntrantes, $deDondeVienenLosDatos)
     if (isset($datosEntrantes["rePassDelUsuario"])) {
         $rePassDelUsuario = trim($datosEntrantes["rePassDelUsuario"]);
 
-
         if (empty($rePassDelUsuario)) {
             $errores["enRePass"] = "Ingrese nuevamente la password";
         } elseif ($passDelUsuario != $rePassDelUsuario) {

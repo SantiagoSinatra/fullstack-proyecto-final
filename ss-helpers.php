@@ -5,4 +5,11 @@ function dd($valor){
         exit;
     echo "</pre>";
 }
+
+function persistirInputUsuario($campoAPersistir)
+{
+    if (isset($_POST[$campoAPersistir])) {
+        return $_POST[$campoAPersistir];
+    }
+}
 ?>

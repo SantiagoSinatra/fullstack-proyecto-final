@@ -1,6 +1,14 @@
 <?php
 //esto es lo que va a hacer el formulario una vez que se realice el envio. 
-require_once("ss-helpers.php");
+
+require_once("autoloader.php");
+if($_POST){
+    $usuarioRegistrandose = new Usuario($_POST["nombreDeUsuario"], $_POST["emailDelUsuario"], $_POST["passDelUsuario"], $_POST["rePassDelUsuario"], $_FILES["avatarDelUsuario"], null);
+
+    $errores = $validador->validacionUsuario($usuarioRegistrandose, "registro");
+}
+
+/* require_once("ss-helpers.php");
 include_once("control/ss-funciones.php");
 if ($_POST) { //si ocurre un post hace lo de abajo
     $errores = ssValidarDatos($_POST, "delRegistro");
@@ -16,8 +24,7 @@ if ($_POST) { //si ocurre un post hace lo de abajo
             exit;
         }
     }
-}
-
+} */
 ?>
 <!DOCTYPE html>
 <html lang="es">
