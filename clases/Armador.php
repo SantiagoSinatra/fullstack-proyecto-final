@@ -1,5 +1,4 @@
 <?php
-require_once("autoloader.php");
 class Armador{
 
     public function armarUsuario($usuarioValidado)
@@ -20,7 +19,7 @@ class Armador{
         $arrayUsuario = [
             "nombreUsuario" => $usuarioValidado->getNombreUsuario(),
             "emailUsuario" => $usuarioValidado->getEmailUsuario(),
-            "passUsuario" => $usuarioValidado->getPassUsuario(),
+            "passUsuario" => Encriptador::encriptarPass($usuarioValidado->getPassUsuario()),
             "avatarUsuario" => $usuarioValidado->getAvatarUsuario(),
             "perfilUsuario" => $perfilUsuario
         ];

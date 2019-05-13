@@ -7,30 +7,14 @@ if($_POST){
 
     $errores = $validador->validacionUsuario($usuarioRegistrandose, "registro");
     if(count($errores)==0){
-        $usuarioAConstruir = $armador -> armarUsuario($usuarioRegistrandose); // arma el array de usuario para pasarlo a json.
+        // arma el array de usuario para pasarlo a json.
+        $usuarioAConstruir = $armador -> armarUsuario($usuarioRegistrandose); 
+        // codifica el array a json.
         $jsonEncoder -> guardarUsuario($usuarioAConstruir);
         dd($usuarioAConstruir);
     }
     
 }
-
-/* require_once("ss-helpers.php");
-include_once("control/ss-funciones.php");
-if ($_POST) { //si ocurre un post hace lo de abajo
-    $errores = ssValidarDatos($_POST, "delRegistro");
-    if (count($errores) == 0) {
-        $usuarioRegistrandose = buscarSiExistePorEmail($_POST["emailDelUsuario"]);
-        if($usuarioRegistrandose != null){
-            $errores["enEmail"]="El usuario ya existe.";
-        }else{
-            $avatarDelUsuario = armarAvatar($_FILES);
-            $registro = armarRegistro($_POST, $avatarDelUsuario);
-            guardarUsuario($registro);
-            header("location:ss-login.php");
-            exit;
-        }
-    }
-} */
 
 ?>
 <!DOCTYPE html>
@@ -109,3 +93,23 @@ if ($_POST) { //si ocurre un post hace lo de abajo
 <!-- ===squb=== -->
 
 </html>
+
+<?php
+/* require_once("ss-helpers.php");
+include_once("control/ss-funciones.php");
+if ($_POST) { //si ocurre un post hace lo de abajo
+    $errores = ssValidarDatos($_POST, "delRegistro");
+    if (count($errores) == 0) {
+        $usuarioRegistrandose = buscarSiExistePorEmail($_POST["emailDelUsuario"]);
+        if($usuarioRegistrandose != null){
+            $errores["enEmail"]="El usuario ya existe.";
+        }else{
+            $avatarDelUsuario = armarAvatar($_FILES);
+            $registro = armarRegistro($_POST, $avatarDelUsuario);
+            guardarUsuario($registro);
+            header("location:ss-login.php");
+            exit;
+        }
+    }
+} */
+?>
