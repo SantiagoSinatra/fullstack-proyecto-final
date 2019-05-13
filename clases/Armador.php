@@ -1,9 +1,8 @@
 <?php
 class Armador{
 
-    public function armarUsuario($usuarioValidado)
-    
-    {
+    public function armarUsuario($usuarioValidado){
+
         $perfilUsuario = 0;
 
         if ($usuarioValidado->getNombreUsuario() == "Daniel Fuentes") {
@@ -25,5 +24,21 @@ class Armador{
         ];
 
         return $arrayUsuario;
+    }
+
+    public function armarAvatar($avatarUsuario){
+
+        $idUsuario = uniqid();
+        $imgName = $avatarUsuario -> getAvatarUsuario()["name"];
+        $imgExt = pathinfo($imgName, PATHINFO_EXTENSION);
+        $origenImagen = $avatarUsuario -> getAvatarUsuario()["tmp_name"];
+        $destinoParaGuardar = dirname(__DIR__);
+        $destinoParaGuardar = $destinoParaGuardar . "/avatares/";
+        $destinoParaGuardar = $destinoParaGuardar . $idUsuario;
+        $destinoParaGuardar = $destinoParaGuardar . "." . $imgExt;
+        move_uploaded_file($origenImagen, $destinoParaGuardar);
+        $avatarUsuario = $idUsuario . "." . $imgExt;
+        return $avatarUsuario;
+
     }
 }
