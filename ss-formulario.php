@@ -6,6 +6,12 @@ if($_POST){
     $usuarioRegistrandose = new Usuario($_POST["nombreDeUsuario"], $_POST["emailDelUsuario"], $_POST["passDelUsuario"], $_POST["rePassDelUsuario"], $_FILES["avatarDelUsuario"], null);
 
     $errores = $validador->validacionUsuario($usuarioRegistrandose, "registro");
+    if(count($errores)==0){
+        $usuarioAConstruir = $armador -> armarUsuario($usuarioRegistrandose); // arma el array de usuario para pasarlo a json.
+        $jsonEncoder -> guardarUsuario($usuarioAConstruir);
+        dd($usuarioAConstruir);
+    }
+    
 }
 
 /* require_once("ss-helpers.php");
@@ -25,6 +31,7 @@ if ($_POST) { //si ocurre un post hace lo de abajo
         }
     }
 } */
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

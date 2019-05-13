@@ -149,12 +149,12 @@ function buscarSiExistePorEmail($inputEmail)
 }
 
 //funcion para persistir lo que pone el usuario. 
-function persistirInputUsuario($campoAPersistir)
+/* function persistirInputUsuario($campoAPersistir)
 {
     if (isset($_POST[$campoAPersistir])) {
         return $_POST[$campoAPersistir];
     }
-}
+} */
 
 //funcion para guardar la imagen que se submitea por files, en donde yo quiero y con el nombre que yo quiero. 
 function armarAvatar($fileSubmitteada)

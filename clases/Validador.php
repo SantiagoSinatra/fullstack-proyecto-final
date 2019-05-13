@@ -31,9 +31,6 @@ class Validador{
             if(empty($rePassUsuario)){
                 $errores["rePassUsuario"] = "Ingrese la constraseña nuevamente";
             }
-            if($avatarUsuario["error"] != 0){
-                $errores["avatarUsuario"] = "Debe subir una imagen";
-            }
             
 
             //Validacion Datos:
@@ -59,6 +56,10 @@ class Validador{
 
                 if(pathinfo($avatarUsuario["name"], PATHINFO_EXTENSION) != "png" && pathinfo($avatarUsuario["name"], PATHINFO_EXTENSION) != "jpg"){
                     $errores["avatarUsuario"] = "La extension debe ser png o jpg";
+                }
+
+                if($avatarUsuario["error"] != 0){
+                    $errores["avatarUsuario"] = "Debe subir una imagen";
                 }
             }
         } else {
