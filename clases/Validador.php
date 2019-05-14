@@ -2,7 +2,7 @@
 require_once("autoloader.php");
 class Validador{
     public function validacionUsuario($usuario, $origen){
-        
+          
         $errores = [];
 
         //Validacion en el Registro:
@@ -60,6 +60,8 @@ class Validador{
 
                 if($avatarUsuario["error"] != 0){
                     $errores["avatarUsuario"] = "Debe subir una imagen";
+                }elseif($avatarUsuario["error"] == 1){
+                    $errores["avatarUsuario"] = "La imagen es muy grande";
                 }
             }
         } else {

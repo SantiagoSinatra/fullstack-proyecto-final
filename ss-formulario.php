@@ -8,12 +8,13 @@ if($_POST){
     $errores = $validador->validacionUsuario($usuarioRegistrandose, "registro");
     if(count($errores)==0){
         // arma el array de usuario para pasarlo a json.
-        $usuarioAConstruir = $armador -> armarUsuario($usuarioRegistrandose); 
+        $usuarioAConstruir = $armador -> armarUsuario($usuarioRegistrandose);
+        //guarda el avatar del usuario. 
+        $armador -> armarAvatar($usuarioRegistrandose -> getAvatarUsuario());
         // codifica el array a json.
         $jsonEncoder -> guardarUsuario($usuarioAConstruir);
         dd($usuarioAConstruir);
     }
-    
 }
 
 ?>

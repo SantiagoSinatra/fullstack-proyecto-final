@@ -28,16 +28,16 @@ class Armador{
 
     public function armarAvatar($avatarUsuario){
 
-        $idUsuario = uniqid();
-        $imgName = $avatarUsuario -> getAvatarUsuario()["name"];
-        $imgExt = pathinfo($imgName, PATHINFO_EXTENSION);
-        $origenImagen = $avatarUsuario -> getAvatarUsuario()["tmp_name"];
-        $destinoParaGuardar = dirname(__DIR__);
+        $idUsuario = uniqid(); //genera un id unico para usar en el usuario
+        $imgName = $avatarUsuario["name"]; //busca en el $FILES el nombre de la imagen.
+        $imgExt = pathinfo($imgName, PATHINFO_EXTENSION); //busca la extension
+        $origenImagen = $avatarUsuario["tmp_name"]; //guardo el origen de la imagen en una variable
+        $destinoParaGuardar = dirname(__DIR__); //armo la ruta donde voy a guardar la imagen
         $destinoParaGuardar = $destinoParaGuardar . "/avatares/";
         $destinoParaGuardar = $destinoParaGuardar . $idUsuario;
         $destinoParaGuardar = $destinoParaGuardar . "." . $imgExt;
-        move_uploaded_file($origenImagen, $destinoParaGuardar);
-        $avatarUsuario = $idUsuario . "." . $imgExt;
+        move_uploaded_file($origenImagen, $destinoParaGuardar); //muevo la imagen a la ruta deseada
+        $avatarUsuario = $idUsuario . "." . $imgExt; //le doy un id y le concateno la extension
         return $avatarUsuario;
 
     }
