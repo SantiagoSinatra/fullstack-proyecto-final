@@ -19,7 +19,9 @@ class DatabaseJSON extends Database {
         file_put_contents($this->nombreArchivo, $usuarioJson . PHP_EOL, FILE_APPEND);
     }
 
-    public function abrirBaseDeDatos(){
+    public function leer(){}
+
+    static public function abrirBaseDeDatos(){
             if (file_exists("ss-usuarios.json")) { // se fija si existe el file o directory que le pasemos.
                 $baseDatosEnJson = file_get_contents("ss-usuarios.json"); // devuelve el contenido de un file en forma de string.
                 $baseDatosEnJson = explode(PHP_EOL, $baseDatosEnJson); // toma el string y lo convierte en un array json de varios string.

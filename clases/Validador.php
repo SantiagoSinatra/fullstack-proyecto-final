@@ -84,7 +84,8 @@ class Validador{
     }
 
     function validarSiExisteUsuarioPorEmail($usuario){
-        //ver como llamar a la clase database json para poder usarla aca HOY.
+        DatabaseJSON -> abrirBaseDeDatos();
+        //ver como llamar a la clase database json para poder usarla aca HOY. //hay que hacer que el metodo sea estatico
 
 
     }
