@@ -1,7 +1,7 @@
 <?php
 //esto es lo que va a hacer el formulario una vez que se realice el envio. 
 
-require_once("autoloader.php");
+require_once("control/autoloader.php");
 if($_POST){
     $usuarioRegistrandose = new Usuario($_POST["nombreDeUsuario"], $_POST["emailDelUsuario"], $_POST["passDelUsuario"], $_POST["rePassDelUsuario"], $_FILES["avatarDelUsuario"], null);
 
@@ -12,8 +12,10 @@ if($_POST){
         //guarda el avatar del usuario. 
         $armador -> armarAvatar($usuarioRegistrandose -> getAvatarUsuario());
         // codifica el array a json.
-        $jsonEncoder -> guardarUsuario($usuarioAConstruir);
-        dd($usuarioAConstruir);
+        $jsonDatabase -> guardarUsuario($usuarioAConstruir); 
+        redirigirUsuario("ss-login.php"); //PHP Funcionando. Revision por Santi el 15/05/2019
+
+
     }
 }
 

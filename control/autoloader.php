@@ -9,4 +9,4 @@ require_once("clases/Encriptador.php");
 
 $validador = new Validador();
 $armador = new Armador();
-$jsonEncoder = new DatabaseJSON("ss-usuarios.json");
+$jsonDatabase = new DatabaseJSON("ss-usuarios.json");

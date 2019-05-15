@@ -12,4 +12,9 @@ function persistirInputUsuario($campoAPersistir)
         return $_POST[$campoAPersistir];
     }
 }
-?>
+
+
+function redirigirUsuario($ruta){
+    header("location:".$ruta);
+    exit;
+}

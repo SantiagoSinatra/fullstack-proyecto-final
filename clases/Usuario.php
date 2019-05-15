@@ -14,7 +14,7 @@ class Usuario{
     //Metodos de Usuario
 
     //Constructor de Usuario
-    public function __construct($nombreUsuario=null, $emailUsuario, $passUsuario, $rePassUsuario, $avatarUsuario=null, $perfilUsuario=null){
+    public function __construct($nombreUsuario=null, $emailUsuario, $passUsuario, $rePassUsuario=null, $avatarUsuario=null, $perfilUsuario=null){
         $this->nombreUsuario = $nombreUsuario;
         $this->emailUsuario = $emailUsuario;
         $this->passUsuario = $passUsuario;

@@ -1,6 +1,8 @@
 <?php
-require_once("autoloader.php");
+require_once("control/autoloader.php");
+
 class Validador{
+
     public function validacionUsuario($usuario, $origen){
           
         $errores = [];
@@ -71,13 +73,19 @@ class Validador{
             $passUsuario = trim($usuario->getPassUsuario());
 
             //Validacion Existencia:
-            if(!isset($emailUsuario)){
+            if(empty($emailUsuario)){
                 $errores["emailUsuario"] = "Ingrese un email";
             }
-            if(!isset($passUsuario)){
+            if(empty($passUsuario)){
                 $errores["passUsuario"] = "Ingrese una constraseña";
             }
         }
         return $errores;
+    }
+
+    function validarSiExisteUsuarioPorEmail($usuario){
+        //ver como llamar a la clase database json para poder usarla aca HOY.
+
+
     }
 }
