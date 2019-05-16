@@ -83,10 +83,34 @@ class Validador{
         return $errores;
     }
 
-    function validarSiExisteUsuarioPorEmail($usuario){
-        DatabaseJSON -> abrirBaseDeDatos();
-        //ver como llamar a la clase database json para poder usarla aca HOY. //hay que hacer que el metodo sea estatico
+    //FUNCIONANDO!!!!
+    function validarUsuarioEmailPass($usuario){
+        $errores = [];
 
+        //Trae de la jsondb el array de usuarios y se fija que no sea null
+        $arrayUsuariosDB = DatabaseJSON::abrirBaseDeDatos();
+        if ($arrayUsuariosDB != null) {
 
+            //por cada usuario del array se fija si el email coincide con el email del POST. Si coincide lo guarda en una variable. 
+            foreach ($arrayUsuariosDB as $usuarioDB) {
+                if ($usuarioDB["emailUsuario"] == $usuario->getEmailUsuario()) {
+                    $usuarioEncontrado = $usuarioDB;
+                }
+            }
+
+            //Se fija si los emails coincidieron viendo si la variable tiene algun dato.
+            if (!empty($usuarioEncontrado)) {
+
+                //De ser asi, valida la contraseña.
+                if (!password_verify($usuario->getPassUsuario(), $usuarioEncontrado["passUsuario"])) {
+                    $errores["passUsuario"] = "Los datos ingresados no coinciden";
+                }
+            //Si la variable esta vacia, genera un error
+            } else {
+                $errores["emailUsuario"] = "El usuario ingresado no existe";
+            }
+
+            return $errores; //ver como llamar a la clase database json para poder usarla aca HOY. //hay que hacer que el metodo sea estatico. YA RESUELTO
+        }
     }
 }
