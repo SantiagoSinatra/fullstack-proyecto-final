@@ -4,6 +4,30 @@ include_once("control/autoloader.php");
 if($_POST){
     $usuarioLogueandose = new Usuario(null, $_POST["emailDelUsuario"], $_POST["passDelUsuario"], null, null, null);
     $errores = $validador->validacionUsuario($usuarioLogueandose, "Login");
+
+    if(empty($errores)){
+        $validacion = $validador->validarUsuarioEmailPass($usuarioLogueandose);
+        if(isset($validacion["usuarioEncontrado"])){
+            $usuarioEncontrado = array_pop($validacion);
+        }else{
+            $errores = $validacion;
+        }
+    }
+    if(empty($errores)){
+        $sesionador -> iniciarSesionUsuario($usuarioEncontrado, $_POST);
+    }
+    if(empty($errores)){
+        if($validador -> validarCookiesUsuario()){
+        
+            header("location: bienvenida.php"); //en el formulario, el action lo dejo vacio para que recargue y controlo el redireccionamiento desde aca.
+            exit;
+
+        } else {
+            header("location: ss-formulario.php");
+            exit;
+
+        }
+    }
     
 =======
 include_once("autoload.php");
@@ -38,6 +62,34 @@ if ($_POST) {
 >>>>>>> 95e7d7b2bc01a76de1dbe9a7c34edc723d30bb2d
 }
 */
+
+/* include_once("control/ss-funciones.php");
+include_once("ss-helpers.php");
+if ($_POST) {
+
+    $errores = ssValidarDatos($_POST, "delLogin");
+    if (count($errores) == 0) {
+        $usuarioLogueandose = buscarSiExistePorEmail($_POST["emailDelUsuario"]);
+        if ($usuarioLogueandose == null) {
+            $errores["enEmail"] = "El usuario ingresado no existe.";
+        } else {
+            if (password_verify($_POST["passDelUsuario"], $usuarioLogueandose["passDelUsuario"]) === false) {
+                $errores["enPassword"] = "Los datos no concuerdan.";
+            } else {
+                iniciarSesionDeUsuario($usuarioLogueandose, $_POST);
+                if (validarCookiesDeUsuario()) {
+                    header("location: bienvenida.php"); //en el formulario, el action lo dejo vacio para que recargue y controlo el redireccionamiento desde aca.
+                    exit;
+                } else {
+                    header("location: ss-formulario.php");
+                    exit;
+                }
+            }
+        }
+    }
+}
+ */
+
 
 ?>
 <!DOCTYPE html>
@@ -136,31 +188,3 @@ if ($_POST) {
 
 
 
-<!-- <?php
-/* include_once("control/ss-funciones.php");
-include_once("ss-helpers.php");
-if ($_POST) {
-
-    $errores = ssValidarDatos($_POST, "delLogin");
-    if (count($errores) == 0) {
-        $usuarioLogueandose = buscarSiExistePorEmail($_POST["emailDelUsuario"]);
-        if ($usuarioLogueandose == null) {
-            $errores["enEmail"] = "El usuario ingresado no existe.";
-        } else {
-            if (password_verify($_POST["passDelUsuario"], $usuarioLogueandose["passDelUsuario"]) === false) {
-                $errores["enPassword"] = "Los datos no concuerdan.";
-            } else {
-                iniciarSesionDeUsuario($usuarioLogueandose, $_POST);
-                if (validarCookiesDeUsuario()) {
-                    header("location: bienvenida.php"); //en el formulario, el action lo dejo vacio para que recargue y controlo el redireccionamiento desde aca.
-                    exit;
-                } else {
-                    header("location: ss-formulario.php");
-                    exit;
-                }
-            }
-        }
-    }
-}
- */
-?> -->
