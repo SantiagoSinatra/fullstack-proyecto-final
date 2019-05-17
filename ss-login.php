@@ -3,8 +3,29 @@ include_once("control/autoloader.php");
 if($_POST){
     $usuarioLogueandose = new Usuario(null, $_POST["emailDelUsuario"], $_POST["passDelUsuario"], null, null, null);
     $errores = $validador->validacionUsuario($usuarioLogueandose, "Login");
+
     if(empty($errores)){
-        $errores = $validador->validarUsuarioEmailPass($usuarioLogueandose);
+        $validacion = $validador->validarUsuarioEmailPass($usuarioLogueandose);
+        if(isset($validacion["usuarioEncontrado"])){
+            $usuarioEncontrado = array_pop($validacion);
+        }else{
+            $errores = $validacion;
+        }
+    }
+    if(empty($errores)){
+        $sesionador -> iniciarSesionUsuario($usuarioEncontrado, $_POST);
+    }
+    if(empty($errores)){
+        if($validador -> validarCookiesUsuario()){
+        
+            header("location: bienvenida.php"); //en el formulario, el action lo dejo vacio para que recargue y controlo el redireccionamiento desde aca.
+            exit;
+
+        } else {
+            header("location: ss-formulario.php");
+            exit;
+
+        }
     }
     
 }
