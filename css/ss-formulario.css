@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.ss-section-formulario{
+    margin-top: 65px;
+}
+
+.ss-item-formulario-global{
+    text-align: center;
+}

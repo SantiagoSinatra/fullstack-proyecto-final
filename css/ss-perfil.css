@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.ss-section-perfil{
+    margin-top: 80px;
+}
+
+.ss-perfil{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.ss-perfil:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.ss-img-perfil{
+    margin-top: 10px;
+    display: block;
+    width: 50%;
+}
+
+.ss-text{
+    padding: 2px 16px;
+    text-align: center;
+}

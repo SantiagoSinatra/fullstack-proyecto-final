@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container-fluid {
+    overflow-x: hidden;
+}
+
+.ss-background-main{
+    background-image: url(../img/school.png);
+    background-repeat: repeat;
+    height: 100vh;
+}
+  
+.ss-background-ofertas {
+    background-color: crimson;
+    border: 3px solid #343A40;
+    border-radius: 5px;
+    padding: 5px 0 2px 0;
+}
+
+.ss-section-ofertas{
+    padding: 0;
+}
+
+.ss-titulo-section-ofertas {
+    font-size: 1em;
+    text-align: center;
+}
+
+.ss-titulo-article-ofertas{
+    font-size: 1em;
+    text-align: center;
+}
+
+.ss-imagenes-ofertas{
+    width: 90%;
+}
+
+.ss-section-categorias{
+    margin-top: 24px;
+    padding: 0;
+}
+
+.ss-background-productos {
+    background-color: #343A40;
+    border-radius: 5px;
+    padding: 5px 23px 5px 23px;
+}
+
+.ss-titulo-categorias, .ss-titulo-mapa{
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+}
+.ss-articulos-categorias{
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.ss-categoria-global-properties{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+
+.ss-categoria-escolares{
+    background-image: url(../img/halftone-yellow.png);
+    background-color: burlywood;
+}
+.ss-categoria-dibujo{
+    background-image: url(../img/ignasi_pattern_s.png);
+    background-color: cadetblue;
+}
+.ss-categoria-oficina{
+    background-image: url(../img/circles-and-roundabouts.png.png);
+    background-color: coral;
+}
+.ss-categoria-mayorista{
+    background-image: url(../img/congruent_pentagon.png);
+    background-color: darkseagreen;
+}
+.ss-categoria-indumentaria{
+    background-image: url(../img/pink_rice.png);
+    
+}
+.ss-categoria-inclusivos{
+    background-image: url(../img/weather.png);
+    background-color: lightcoral;
+}
+
+.ss-section-map{
+    padding: 0;
+}
+
+.ss-background-mapa{
+    background-color: #343A40;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 30px;
+
+}
+
+.ss-map-container{
+    display: flex;
+    align-items: center;
+}
+
+.ss-map-container iframe{
+    width: 350px;
+    height: 250px;
+}
+
+@media (min-width: 768px) {
+    .ss-section-ofertas{
+        padding: 0 20px 0 20px;
+    }
+
+    .ss-map-container iframe{
+        width: 670px;
+    }
+
+    .ss-section-categorias, .ss-section-map{
+        padding: 0 20px 0 20px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .ss-map-container iframe{
+        width: 1000px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .ss-section-ofertas{
+        padding: 0 5px 0 20px;
+    }
+    .ss-section-categorias{
+        margin-top: 0;
+        padding: 0 20px 0 5px;
+    }
+
+    .ss-background-productos{
+        padding-bottom: 58px;
+    }
+    .ss-map-container iframe{
+        width: 1400px;
+    }
+}
+

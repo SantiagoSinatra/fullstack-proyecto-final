@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+.ss-nav-titulo-span{
+    color: blueviolet;
+}
+.navbar-nav{
+    height: 100vh;
+}
+
+@media (min-width: 992px){
+    .navbar-nav{
+        height: 100%;
+    }
+ }
+
