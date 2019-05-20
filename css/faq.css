@@ -3,30 +3,32 @@
     margin: 0;
     padding: 0;
 }
+.container-faq{
+    margin-top: 63px;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../img/backgrounds/background-login.jpg);
+    background-size: cover;
+    background-repeat: repeat;
 
-body{
-    background-color: burlywood;
-    padding: 100px;
+    
+}   
+.jumbotron{
+    font-weight: 330;
+    background-color: rgba(255,255,255,0.40);
+}
+.ss-item-faq-global{
+    width: 50vw;
+    background: none;
+    color: white;
+    text-align: center;
+    font-size: 35px;
+
+}
+.faq-respuesta{
+   text-transform: uppercase; 
+   color: white;
+   text-align: center;
+
 }
 
-.container{
-    background-color: burlywood;
-    width: 100%;
-}
-
-.s-footer{
-    background-color: burlywood;
-}
-
-.preguntas{
-    width: 100%;
-}
-
-.list-group-item {
-    position: relative;
-    display: block;
-    padding: .75rem 1.25rem;
-    margin-bottom: -1px;
-    background-color: burlywood;
-    border: 1px solid burlywood;
-}

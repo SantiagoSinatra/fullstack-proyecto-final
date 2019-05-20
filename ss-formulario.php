@@ -37,7 +37,7 @@ if($_POST){
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid ss-contenedor-registro" >
         <!-- contenedor del nav -->
         <div class="ss-container-nav-global">
             <?php // include("nav-global.php"); ?>
@@ -53,34 +53,33 @@ if($_POST){
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
-
+        <section class="row">
+            <article class=" col-9 col-lg-3 ss-article-registro-title">
+                <h1 class="ss-h1-registro-title">Registro</h1>
+            </article>
+        </section>
         <section class="row ss-section-formulario">
-            <article class="col-12">
+            <article class="col-9 col-lg-3 ss-article-registro-title">
                 <form action="" method="POST" enctype="multipart/form-data">
                     <!-- post para que los datos vayan encriptados, enctype es el tipo de encripcion que se le va a hacer, y se pone multipart/form-data porque se van a mandar files (la foto del usuario) -->
-                    <div class="col-12 ss-item-formulario-global">
-                        <label>Usuario:</label>
-                        <input name="nombreDeUsuario" id="nombreDeUsuario" type="text" value="<?= (isset($errores["nombreDeUsuario"])) ? "" : persistirInputUsuario("nombreDeUsuario"); ?>" placeholder="ingrese un nombre">
+                    <div class="col-12 ss-item-registro-global">
+                        <input class="ss-input-registro-global" name="nombreDeUsuario" id="nombreDeUsuario" type="text" value="<?= (isset($errores["nombreDeUsuario"])) ? "" : persistirInputUsuario("nombreDeUsuario"); ?>" placeholder="ingrese un nombre">
                     </div>
-                    <div class="col-12 ss-item-formulario-global">
-                        <label>Email:</label>
-                        <input name="emailDelUsuario" id="emailDelUsuario" type="text" value="<?= (isset($errores["emailDelUsuario"])) ? "" : persistirInputUsuario("emailDelUsuario"); ?>" placeholder="ingrese un email">
+                    <div class="col-12 ss-item-registro-global">
+                        <input class="ss-input-registro-global" name="emailDelUsuario" id="emailDelUsuario" type="text" value="<?= (isset($errores["emailDelUsuario"])) ? "" : persistirInputUsuario("emailDelUsuario"); ?>" placeholder="ingrese un email">
                     </div>
-                    <div class="col-12 ss-item-formulario-global">
-                        <label>Contraseña:</label>
-                        <input name="passDelUsuario" id="passDelUsuario" type="password" value="<?= (isset($errores["passDelUsuario"])) ? "" : persistirInputUsuario("passDelUsuario"); ?>" placeholder="ingrese una contraseña">
+                    <div class="col-12 ss-item-registro-global">
+                        <input class="ss-input-registro-global" name="passDelUsuario" id="passDelUsuario" type="password" value="<?= (isset($errores["passDelUsuario"])) ? "" : persistirInputUsuario("passDelUsuario"); ?>" placeholder="ingrese una contraseña">
                     </div>
-                    <div class="col-12 ss-item-formulario-global">
-                        <label>Confirmar Constraeña:</label>
-                        <input name="rePassDelUsuario" id="rePassDelUsuario" type="password" value="<?= (isset($errores["rePassDelUsuario"])) ? "" : persistirInputUsuario("rePassDelUsuario"); ?>" placeholder="ingrese contraseña nuevamente">
+                    <div class="col-12 ss-item-registro-global">
+                        <input class="ss-input-registro-global" name="rePassDelUsuario" id="rePassDelUsuario" type="password" value="<?= (isset($errores["rePassDelUsuario"])) ? "" : persistirInputUsuario("rePassDelUsuario"); ?>" placeholder="reingrese contraseña">
                     </div>
-                    <div class="col-12 ss-item-formulario-global">
-                        <label>Foto de Usuario:</label>
-                        <input name="avatarDelUsuario" type="file" value="">
+                    <div class="col-12 ss-item-registro-global">
+                        <input class="col-12 ss-item-registro-global" name="avatarDelUsuario" type="file" value="">
                     </div>
-                    <div class="col-12 ss-item-formulario-global">
-                        <button type="submit">¡Registrarme!</button>
-                        <button type="reset">Comenzar de nuevo..</button>
+                    <div class="col-12 ss-item-registro-global">
+                        <button class="ss-registro-button-borrar" type="submit">Registrarme!</button>
+                        <button class="ss-registro-button-enter" type="reset">Reiniciar</button>
                     </div>
                 </form>
             </article>
