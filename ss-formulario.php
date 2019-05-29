@@ -1,4 +1,4 @@
-<?php
+<?php 
 //esto es lo que va a hacer el formulario una vez que se realice el envio. 
 
 require_once("control/autoloader.php");
