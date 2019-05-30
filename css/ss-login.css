@@ -106,6 +106,14 @@
     text-transform: uppercase;
 }
 
+.ss-login-button-borrar:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(58, 199, 182);
+    border: 2px solid rgba(58, 199, 182, 0.4);
+    transition-duration: 1.5s;
+}
+
 
 @media (min-width: 992px){
 
