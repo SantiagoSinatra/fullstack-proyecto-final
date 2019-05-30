@@ -61,12 +61,24 @@
     background: none;
     color: rgba(255,255,255,0.40);
     text-align: center;
+    text-transform: uppercase;
 }
 
-.ss-input-login-global::placeholder{
+.ss-input-login-global::-webkit-input-placeholder{
     color: rgba(255,255,255,0.40);
-    text-align: center;
-    text-transform: uppercase;
+}
+
+.ss-input-login-global:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    transition-duration: 1.5s;
+}
+
+.ss-input-login-global:hover::-webkit-input-placeholder{
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    transition-duration: 1.5s;
 }
 
 .ss-login-recordar{
@@ -108,9 +120,10 @@
 
 .ss-login-button-borrar:hover{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    background-color: rgba(0, 0, 0, 0);
-    color: rgba(58, 199, 182);
-    border: 2px solid rgba(58, 199, 182, 0.4);
+    background-color: rgba(189, 69, 69, 0.973);
+    color: rgb(240, 8, 8);
+    font-weight: 500;
+    border: 2px solid rgb(240, 8, 8);
     transition-duration: 1.5s;
 }
 
