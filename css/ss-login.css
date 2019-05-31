@@ -106,7 +106,7 @@
     background-color: rgba(0, 0, 0, 0);
     color: rgba(58, 199, 182);
     border: 2px solid rgba(58, 199, 182, 0.4);
-    transition-duration: 1.5s;
+    transition-duration: 0.5s;
 }
 
 .ss-login-button-borrar{
