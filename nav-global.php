@@ -33,7 +33,7 @@
                         <?php if(validarCookiesDeUsuario()) { ?>
                         <a class="nav-link" href="ss-logout.php">Logout</a>
                         <?php }else{ ?>
-                        <a class="nav-link" href="ss-formulario.php">Registrarse</a> <?php } ?>
+                        <a class="nav-link" href="ss-registro.php">Registrarse</a> <?php } ?>
                     </li>
 
                     <li class="nav-item dropdown">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2019 a las 19:32:56
+-- Tiempo de generación: 02-06-2019 a las 03:07:10
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -83,8 +83,20 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name_user` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pic_user` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `pic_user` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perfil` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`id`, `name_user`, `email`, `pic_user`, `password`, `perfil`) VALUES
+(1, '$name', '$email', NULL, '$pass', ''),
+(2, '$name', '$email', NULL, '$pass', ''),
+(3, 'Luna', 'lulikad@hotmail.com', NULL, 'Kadysz123', ''),
+(4, 'Luna', 'lulikad@hotmail.com', NULL, 'Kadysz123', '');
 
 -- --------------------------------------------------------
 
@@ -176,7 +188,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`

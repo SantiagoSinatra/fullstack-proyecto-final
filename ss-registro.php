@@ -7,13 +7,15 @@ if($_POST){
 
     $errores = $validador->validacionUsuario($usuarioRegistrandose, "registro");
     if(count($errores)==0){
-        // arma el array de usuario para pasarlo a json.
+        // arma el array de usuario para pasarlo a MYSQL.
         $usuarioAConstruir = $armador -> armarUsuario($usuarioRegistrandose);
         //guarda el avatar del usuario. 
-        $armador -> armarAvatar($usuarioRegistrandose -> getAvatarUsuario());
-        // codifica el array a json.
-        $jsonDatabase -> guardarUsuario($usuarioAConstruir); 
-        redirigirUsuario("ss-login.php"); //PHP Funcionando. Revision por Santi el 15/05/2019
+        $usuarioAConstruir["avatarUsuario"] = $armador -> armarAvatar($usuarioRegistrandose -> getAvatarUsuario());
+        Query::insertarEnDB($usuarioAConstruir);
+
+        /*// codifica el array a json.
+        $jsonDatabase -> guardarUsuario($usuarioAConstruir);*/ 
+        redirigirUsuario("ss-login.php"); //PHP Funcionando. Revision por Santi el 15/05/2019 
 
 
     }
