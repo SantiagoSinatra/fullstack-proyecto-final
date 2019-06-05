@@ -25,6 +25,23 @@ class Query{
 		}
     }
 
+    public static function buscarDatosUsuario($datoABuscar){
+    	global $pdo;
+    	$emailUsuario = $datoABuscar["email"];
+		$consulta = $pdo->prepare("select * from user where email like :email");
+		$consulta->bindValue(":email","%".$emailUsuario."%");
+		try {
+			$consulta->execute();
+			$datosUsuario = $consulta->fetch(PDO::FETCH_ASSOC);
+		} catch (Exception $e) {
+			var_dump($e->getMessage()); 
+			echo "Hubo un error al buscar el dato"; 
+			exit;
+		}
+		return $datosUsuario;
+	}
+    
+
     public static function buscarEmail($datoABuscar){
 		global $pdo;
 		$emailUsuario = $datoABuscar["emailUsuario"];

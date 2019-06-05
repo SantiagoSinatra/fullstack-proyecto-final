@@ -2,12 +2,14 @@
 require_once("control/autoloader.php");
 //el sesionador administra las cookies de los usuarios y las variables de sesion. 
 class Sesionador{
-    public function iniciarSesionUsuario($usuarioLogueandose, $datosDelPost){
-        
-        $_SESSION["nombreUsuario"] = $usuarioLogueandose["nombreUsuario"];
-        $_SESSION["emailUsuario"] = $usuarioLogueandose["emailUsuario"];
-        $_SESSION["perfilDeUsuario"] = $usuarioLogueandose["perfilUsuario"];
-        $_SESSION["avatarDelUsuario"] = $usuarioLogueandose["avatarUsuario"];
+    public function iniciarSesionUsuario($datoEmail,$datosDelPost){
+        session_start();
+        $datoUsuario = Query::buscarDatosUsuario($datoEmail);
+
+        $_SESSION["nombreUsuario"] = $datoUsuario["name_user"];
+        $_SESSION["emailUsuario"] = $datoUsuario["email"];
+        $_SESSION["perfilDeUsuario"] = $datoUsuario["perfil"];
+        $_SESSION["avatarDelUsuario"] = $datoUsuario["pic_user"];
 
         if (isset($datosDelPost["recordarUsuario"])) {
             setcookie("emailUsuario", $datosDelPost["emailDelUsuario"], time() + 3600);

@@ -95,11 +95,13 @@ class Validador{
         //Trae de queries el usuario y si es null es porque el mail ingresado no esta en la base de datos
         $passIntroducida = $arrayUsuario["passUsuario"];
         $passHasheada = Query::buscarPass($arrayUsuario);
+        
 
         if (Query::buscarEmail($arrayUsuario) == null) {
             $errores["emailUsuario"] = "Email invalido";
 
         }else{
+            $usuarioEncontrado = Query::buscarEmail($arrayUsuario);
             if (!password_verify($passIntroducida,$passHasheada)) {
                     $errores["passUsuario"] = "Los datos ingresados no coinciden";
             }

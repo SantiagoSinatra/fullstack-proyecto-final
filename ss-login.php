@@ -7,15 +7,16 @@ if($_POST){
 
     if(empty($errores)){
         $validacion = $validador->validarUsuarioEmailPass($usuarioLogueandose);
+
         if(isset($validacion["usuarioEncontrado"])){
+            $sesion = $sesionador -> iniciarSesionUsuario($validacion["usuarioEncontrado"],$_POST);
             $usuarioEncontrado = array_pop($validacion);
+
         }else{
             $errores = $validacion;
         }
     }
-    if(empty($errores)){
-        $sesionador -> iniciarSesionUsuario($usuarioEncontrado, $_POST);
-    }
+  
     if(empty($errores)){
         if($validador -> validarCookiesUsuario()){
         
