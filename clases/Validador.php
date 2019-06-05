@@ -66,8 +66,7 @@ class Validador{
                 }elseif($avatarUsuario["error"] == 1){
                     $errores["avatarUsuario"] = "La imagen es muy grande";
                 }
-            }
-        } else {
+            }else{
 
             //Limpieza de datos:
             $emailUsuario = trim($usuario->getEmailUsuario());
@@ -81,43 +80,36 @@ class Validador{
                 $errores["passUsuario"] = "Ingrese una constraseña";
             }
         }
+    }
         return $errores;
     }
 
     //FUNCIONANDO!!!! x2!!!
     public function validarUsuarioEmailPass($usuario){
         $errores = [];
+        $arrayUsuario = [
+            "passUsuario" =>$usuario->getPassUsuario(),
+            "emailUsuario" =>$usuario->getEmailUsuario()
+        ];
 
-        //Trae de la jsondb el array de usuarios y se fija que no sea null
-        $arrayUsuariosDB = DatabaseJSON::abrirBaseDeDatos();
-        if ($arrayUsuariosDB != null) {
+        //Trae de queries el usuario y si es null es porque el mail ingresado no esta en la base de datos
+        $passIntroducida = $arrayUsuario["passUsuario"];
+        $passHasheada = Query::buscarPass($arrayUsuario);
 
-            //por cada usuario del array se fija si el email coincide con el email del POST. Si coincide lo guarda en una variable. 
-            foreach ($arrayUsuariosDB as $usuarioDB) {
-                if ($usuarioDB["emailUsuario"] == $usuario->getEmailUsuario()) {
-                    $usuarioEncontrado = $usuarioDB;
-                }
-            }
+        if (Query::buscarEmail($arrayUsuario) == null) {
+            $errores["emailUsuario"] = "Email invalido";
 
-            //Se fija si los emails coincidieron viendo si la variable tiene algun dato.
-            if (!empty($usuarioEncontrado)) {
-
-                //De ser asi, valida la contraseña.
-                if (!password_verify($usuario->getPassUsuario(), $usuarioEncontrado["passUsuario"])) {
+        }else{
+            if (!password_verify($passIntroducida,$passHasheada)) {
                     $errores["passUsuario"] = "Los datos ingresados no coinciden";
-                }
-            //Si la variable esta vacia, genera un error
-            } else {
-                $errores["emailUsuario"] = "El usuario ingresado no existe";
             }
 
             //Esto es para pasarle el usuario entero al login 
             if(empty($errores)){
                 $errores["usuarioEncontrado"] = $usuarioEncontrado;
             }
-
-            return $errores; //ver como llamar a la clase database json para poder usarla aca HOY. //hay que hacer que el metodo sea estatico. YA RESUELTO
         }
+        return $errores;
     }
 
     public function validarCookiesUsuario(){

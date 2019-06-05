@@ -25,6 +25,41 @@ class Query{
 		}
     }
 
+    public static function buscarEmail($datoABuscar){
+		global $pdo;
+		$emailUsuario = $datoABuscar["emailUsuario"];
+		$consulta = $pdo->prepare("select email from user where email like :email");
+		$consulta->bindValue(":email","%".$emailUsuario."%");
+		try {
+			$consulta->execute();
+			$emailEncontrado = $consulta->fetch(PDO::FETCH_ASSOC);
+		} catch (Exception $e) {
+			var_dump($e->getMessage()); 
+			echo "Hubo un error al buscar el dato"; 
+			exit;
+		}
+		return $emailEncontrado;
+	}
+
+	public static function buscarPass($datoABuscar){
+	global $pdo;
+		$emailUsuario = $datoABuscar["emailUsuario"];
+		$consulta = $pdo->prepare("select password from user where email like :email ");
+		$consulta->bindValue(":email","%".$emailUsuario."%");
+		try {
+			$consulta ->execute();
+			$passEncontrada = $consulta->fetch(PDO::FETCH_ASSOC);
+		}catch (Exception $e){
+			var_dump($e->getMessage());
+			echo "Hubo un error al buscar los datos"; 
+			exit;
+		}
+    
+		return $passEncontrada["password"];
+	}
+
+
+
 }
 
 ?>

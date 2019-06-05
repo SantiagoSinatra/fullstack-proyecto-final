@@ -2,6 +2,7 @@
 include_once("control/autoloader.php");
 if($_POST){
     $usuarioLogueandose = new Usuario(null, $_POST["emailDelUsuario"], $_POST["passDelUsuario"], null, null, null);
+
     $errores = $validador->validacionUsuario($usuarioLogueandose, "Login");
 
     if(empty($errores)){

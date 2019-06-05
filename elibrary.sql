@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2019 a las 03:07:10
+-- Tiempo de generación: 03-06-2019 a las 20:49:58
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -93,10 +93,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name_user`, `email`, `pic_user`, `password`, `perfil`) VALUES
-(1, '$name', '$email', NULL, '$pass', ''),
-(2, '$name', '$email', NULL, '$pass', ''),
-(3, 'Luna', 'lulikad@hotmail.com', NULL, 'Kadysz123', ''),
-(4, 'Luna', 'lulikad@hotmail.com', NULL, 'Kadysz123', '');
+(5, 'Luna', 'lulikad@hotmail.com', '5cf32403c1ff1.jpg', '$2y$10$vmMI8R9HR0ww6xv3q5fVvuWiHM6TbAV7YDvyhu', '1'),
+(6, 'Administrador', 'cachi@hotmail.com', '5cf3dfa9b8932.jpg', '$2y$10$9gouUwgr1c2zzSuM253RiOSB7N0RvMKCpNvBWj', '99');
 
 -- --------------------------------------------------------
 
@@ -188,7 +186,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`

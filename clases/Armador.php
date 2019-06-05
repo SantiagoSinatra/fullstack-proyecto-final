@@ -14,7 +14,8 @@ class Armador{
         } else {
             $perfilUsuario = 1;
         }
-
+        var_dump($usuarioValidado->getPassUsuario());
+        exit;
         $arrayUsuario = [
             "nombreUsuario" => $usuarioValidado->getNombreUsuario(),
             "emailUsuario" => $usuarioValidado->getEmailUsuario(),
