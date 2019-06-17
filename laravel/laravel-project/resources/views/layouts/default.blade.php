@@ -13,7 +13,6 @@
 	@include('nav');
 	<br>
 	<br>
-	<br>
 	@yield('content');
 </body>
 
