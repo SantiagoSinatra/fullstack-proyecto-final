@@ -19,7 +19,8 @@ Route::get('/faq','navController@faq');
 Route::get('/inicio','navController@inicio');
 Route::get('/login','navController@login');
 Route::get('/registro','navController@registro');
-Route::get('/productos','navController@productos');
+Route::get('/productos','ProductsController@index');
+Route::get('/crearProducto','ProductsController@create');
 Route::get('/contacto','navController@contacto');
 
 
