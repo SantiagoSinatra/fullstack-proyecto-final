@@ -21,6 +21,7 @@ Route::get('/login','navController@login');
 Route::get('/registro','navController@registro');
 Route::get('/productos','ProductsController@index');
 Route::get('/crearProducto','ProductsController@create');
+Route::get('/guardarProducto','ProductsController@save');
 Route::get('/contacto','navController@contacto');
 
 
