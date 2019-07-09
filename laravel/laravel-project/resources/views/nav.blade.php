@@ -25,11 +25,8 @@
                             Nuestros Productos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Crear</a>
-                            <a class="dropdown-item" href="#">Dibujo Tecnico</a>
-                            <a class="dropdown-item" href="#">Articulos de Oficina</a>
-                            <a class="dropdown-item" href="#">Ventas por Mayor</a>
-                            <a class="dropdown-item" href="#">Productos Inclusivos</a>
+                            <a class="dropdown-item" href="/productos">Ver</a>
+                            <a class="dropdown-item" href="/crearProducto">Crear</a>
                         </div>
                     </li>
                     <li class="nav-item">

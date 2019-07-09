@@ -11,17 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/faq','navController@faq');
-Route::get('/inicio','navController@inicio');
+Route::get('/','navController@inicio');
 Route::get('/login','navController@login');
 Route::get('/registro','navController@registro');
 Route::get('/productos','ProductsController@index');
 Route::get('/crearProducto','ProductsController@create');
-Route::get('/guardarProducto','ProductsController@save');
+Route::post('/guardarProducto','ProductsController@save');
 Route::get('/contacto','navController@contacto');
 
 

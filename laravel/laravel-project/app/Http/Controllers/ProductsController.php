@@ -28,7 +28,7 @@ class ProductsController extends Controller
             'numeric'=>'Ingrese solamente numeros'
         ];
 
-        $this->validate($request,$rules,$messages);
+        $this->validate($request,$rules,$messages); /* valida la request que le paso con las reglas que le paso */
         $product = new Product($request->all());
         $product->save();
         return redirect('/productos');

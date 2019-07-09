@@ -11,11 +11,11 @@
 	<title></title>
 </head>
 <body>
-	@include('nav');
+	@include('nav')
 	<br>
 	<br>
 	<br>
-	@yield('content');
+	@yield('content')
 </body>
 
 <!-- scripts que usa bootstrap -->
