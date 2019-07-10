@@ -25,3 +25,9 @@ Route::get('/contacto','navController@contacto');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//contrasenia rafarosetti@gmail.com = 123456
