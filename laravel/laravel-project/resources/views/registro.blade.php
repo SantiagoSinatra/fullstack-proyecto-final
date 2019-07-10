@@ -38,4 +38,7 @@
             </article>
         </section>
     </div>
+    <div>
+        <script type="text/javascript" src="/js/master.js"></script>
+    </div>
 @endsection
