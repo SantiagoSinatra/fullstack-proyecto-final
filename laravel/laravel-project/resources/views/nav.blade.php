@@ -10,14 +10,14 @@
                         <a class="nav-link" href="/inicio">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        
-                        <a class="nav-link" href="/login">Login</a> 
+
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
 
                     <li class="nav-item">
-                        
-                        
-                        <a class="nav-link" href="/registro">Registrarse</a> 
+
+
+                        <a class="nav-link" href="/registro">Registrarse</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -25,7 +25,7 @@
                             Nuestros Productos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Escolares</a>
+                            <a class="dropdown-item" href="#">Crear</a>
                             <a class="dropdown-item" href="#">Dibujo Tecnico</a>
                             <a class="dropdown-item" href="#">Articulos de Oficina</a>
                             <a class="dropdown-item" href="#">Ventas por Mayor</a>

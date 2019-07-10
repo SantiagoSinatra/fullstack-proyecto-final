@@ -1,4 +1,10 @@
 @extends('layouts.default')
 @section('content')
-<h1>Este es el productos</h1>
+<ul>
+    @foreach ($products as $product)
+    <li>{{$product->name_prod}}</li>
+    <li>{{$product->price}}</li>
+    <br>
+    @endforeach
+</ul>
 @endsection
